@@ -1,6 +1,6 @@
 
 import * as React from 'react'
-import { ReactDOM } from 'react'
+import { ReactDOM } from 'react-dom'
 
 function ReactStatesJSXComponent(){
     console.log('React States JSX Component');
@@ -49,7 +49,7 @@ function ReactStatesJSXComponent(){
         <div>
             <Avatar id={1} name='Linda' size='small'/>    
             <Avatar id={2} name='Sarah' size='medium'/>        
-            <Avatar id={3} name='Micah'  size='large'/>        
+            <Avatar id={3} name='Micah'  size='large'/>       
             <Avatar/>        
             <Avatar id={4} size='small'/>        
         </div>,
