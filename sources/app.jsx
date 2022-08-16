@@ -1,6 +1,7 @@
 
 import * as React from 'react'
-import { ReactDOM } from 'react-dom'
+import * as ReactDOM from 'react-dom' // deprecated in react 17
+import { createRoot } from 'react-dom/client'
 
 function ReactStatesJSXComponent(){
     console.log('React States JSX Component');
@@ -45,15 +46,15 @@ function ReactStatesJSXComponent(){
     
     }
 
-    ReactDOM.render(
+    const root = createRoot($app)
+    root.render(
         <div>
             <Avatar id={1} name='Linda' size='small'/>    
             <Avatar id={2} name='Sarah' size='medium'/>        
             <Avatar id={3} name='Micah'  size='large'/>       
             <Avatar/>        
             <Avatar id={4} size='small'/>        
-        </div>,
-        $app
+        </div>
     )
 }
 ReactStatesJSXComponent()
