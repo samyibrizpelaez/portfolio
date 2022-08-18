@@ -1,9 +1,7 @@
-
 import * as React from 'react'
-import * as ReactDOM from 'react-dom' // deprecated in react 17
 import { createRoot } from 'react-dom/client'
 
-function ReactStatesJSXComponent(){
+export function Avatar(){
     console.log('React States JSX Component');
     const $app = document.getElementById('app')
     const useState = React.useState
@@ -57,4 +55,3 @@ function ReactStatesJSXComponent(){
         </div>
     )
 }
-ReactStatesJSXComponent()

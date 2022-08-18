@@ -40,27 +40,27 @@ export default class World
 
     setEarth()
     {
-        this.resources.items.earthDayTexture.encoding = THREE.sRGBEncoding
-        this.resources.items.earthNightTexture.encoding = THREE.sRGBEncoding
-        this.resources.items.earthNormalTexture.encoding = THREE.sRGBEncoding
-        this.resources.items.earthSpecularTexture.encoding = THREE.sRGBEncoding
-        this.resources.items.earthCloudsTexture.encoding = THREE.sRGBEncoding
-        this.resources.items.earthBumpTexture.encoding = THREE.sRGBEncoding
+        this.resources.items.earthDayTexture.encoding       = THREE.sRGBEncoding
+        this.resources.items.earthNightTexture.encoding     = THREE.sRGBEncoding
+        this.resources.items.earthNormalTexture.encoding    = THREE.sRGBEncoding
+        this.resources.items.earthSpecularTexture.encoding  = THREE.sRGBEncoding
+        this.resources.items.earthCloudsTexture.encoding    = THREE.sRGBEncoding
+        this.resources.items.earthBumpTexture.encoding      = THREE.sRGBEncoding
 
-        this.earthGeometry = new THREE.SphereGeometry(1, 64, 64)
+        this.earthGeometry              = new THREE.SphereGeometry(1, 64, 64)
 
-        this.earthMaterial = new THREE.MeshPhongMaterial()
-        this.earthMaterial.map = this.resources.items.earthDayTexture
-        this.earthMaterial.bumpMap = this.resources.items.earthBumpTexture
-        this.earthMaterial.bumpScale =  0.1
-        this.earthMaterial.specularMap = this.resources.items.earthSpecularTexture
-        this.earthMaterial.specular = new THREE.Color('grey')
-        this.earthMaterial.shininess = 10
+        this.earthMaterial              = new THREE.MeshPhongMaterial()
+        this.earthMaterial.map          = this.resources.items.earthDayTexture
+        this.earthMaterial.bumpMap      = this.resources.items.earthBumpTexture
+        this.earthMaterial.bumpScale    =  0.1
+        this.earthMaterial.specularMap  = this.resources.items.earthSpecularTexture
+        this.earthMaterial.specular     = new THREE.Color('grey')
+        this.earthMaterial.shininess    = 10
 
-        this.earthMesh = new THREE.Mesh(this.earthGeometry, this.earthMaterial)
+        this.earthMesh                  = new THREE.Mesh(this.earthGeometry, this.earthMaterial)
 
-        this.cloudsGeometry   = new THREE.SphereGeometry(1.02, 32, 32)
-        this.cloudsmaterial  = new THREE.MeshPhongMaterial(
+        this.cloudsGeometry             = new THREE.SphereGeometry(1.02, 32, 32)
+        this.cloudsmaterial             = new THREE.MeshPhongMaterial(
             {
                 map         : this.resources.items.earthCloudsTexture,
                 side        : THREE.DoubleSide,
@@ -68,12 +68,11 @@ export default class World
                 transparent : true,
                 depthWrite  : false,
             });
-        this.cloudsGeometry = new THREE.Mesh(this.cloudsGeometry, this.cloudsmaterial)
-        this.cloudsGeometry.Name = 'clouds'
+        this.cloudsGeometry         = new THREE.Mesh(this.cloudsGeometry, this.cloudsmaterial)
+        this.cloudsGeometry.Name    = 'clouds'
         this.earthMesh.add(this.cloudsGeometry)
-        this.earthMesh.rotation.y = -Math.PI * 0.1
-        this.earthMesh.Name = 'earth'
-        console.log(this.scene)
+        this.earthMesh.rotation.y   = -Math.PI * 0.1
+        this.earthMesh.Name         = 'earth'
         this.scene.add(this.earthMesh)
     }
 
