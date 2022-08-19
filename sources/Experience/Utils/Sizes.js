@@ -16,7 +16,7 @@ export default class Sizes extends EventEmitter
         this.$sizeViewport.style.height = '100vh'
         this.$sizeViewport.style.position = 'absolute'
         this.$sizeViewport.style.top = 0
-        this.$sizeViewport.style.left = 0
+        this.$sizeViewport.style.left = 0   
         this.$sizeViewport.style.pointerEvents = 'none'
 
         // Resize event

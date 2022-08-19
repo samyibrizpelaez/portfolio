@@ -11,7 +11,11 @@ export default defineConfig({
     {
         outDir: '../dist',
         emptyOutDir: true,
-        sourcemap: true
+        sourcemap: true,
+        
     },
-    plugins: [glsl()]
+    server:{
+        port: 8000,
+    },
+    plugins: [glsl()],
 })

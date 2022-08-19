@@ -1,11 +1,13 @@
 
 import * as React from 'react'
-import { Route, Routes} from 'react-router-dom'
+import { Route, Routes, Link} from 'react-router-dom'
+import { HomePage } from './views/Home'
 
-const HomePage      = ()    => <h1>Home</h1>
-const SearchPage    = ()    => <h1>Search</h1>
-const AboutPage     = ()    => <h1>About</h1>
-const NotFoundPage  = ()    => <h1>Not Found</h1>
+
+const ProjectsPage  = ()    => <h1 id="page-title">Home</h1>
+const AboutPage     = ()    => <h1 id="page-title">About</h1>
+const ContactPage   = ()    => <h1 id="page-title">Contact</h1>
+const NotFoundPage  = ()    => <h1 id="page-title">Not Found</h1>
 
 export function App()
 {
@@ -13,24 +15,28 @@ export function App()
         <div className='App'>
 
             <header>
-            <div id="nav">
                 <div id="nav-logo-container">
-                    <img id="nav-logo" src="assets/LogoSamyCurve.png" alt="Logo"/>
+                    <a href="/" id="nav-logo-link">
+                        <img id="nav-logo" src="assets/LogoSamyCurve.png" alt="Logo"/>
+                        <h1 id="nav-title">SamyDev</h1>
+                    </a>
                 </div>
-                <h1 id="nav-title">SamyDev</h1>
-                <ul id="nav-collection">
-                    <li class="nav-item"><a href="/">Home</a></li>
-                    <li class="nav-item"><a href="about">About</a></li>
-                    <li class="nav-item"><a href="contact">Contact</a></li>
-                </ul>
-            </div> 
             </header>
+            <div id="nav">
+                    <ul id="nav-collection">
+                        <li className="nav-item"><Link to="/">Home</Link></li>
+                        <li className="nav-item"><Link to="projects">Projects</Link></li>
+                        <li className="nav-item"><Link to="about">About</Link></li>
+                        <li className="nav-item"><Link to="contact">Contact</Link></li>
+                    </ul>
+            </div>
 
             <Routes>
-                <Route path="/"         element={<HomePage />}      />
-                <Route path="/search"   element={<SearchPage />}    />
-                <Route path="/about"    element={<AboutPage />}     />
-                <Route path="*"         element={<NotFoundPage />}  />
+                <Route path="/"             element={<HomePage />}      />
+                <Route path="/about"        element={<AboutPage />}     />
+                <Route path="/projects"     element={<ProjectsPage />}   />
+                <Route path="/contact"      element={<ContactPage/>}     />
+                <Route path="*"             element={<NotFoundPage />}  />
             </Routes>
         </div>
         
