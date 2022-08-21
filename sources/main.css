@@ -275,9 +275,27 @@ form > div {
         text-orientation: upright;
         text-transform: uppercase;
     }
+
+    form {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .contact-section{
+        margin-top: 20px;
+    }
+
+    .contact-section>ul>li {
+        margin-left: 0px;
+        margin-right: 20px;
+        list-style-type: none;
+        display: inline;
+    }
+
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+
     #page-title {
         font-size: 2em;
         margin-top: 20px;
