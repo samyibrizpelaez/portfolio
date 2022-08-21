@@ -160,6 +160,11 @@ h1 {
     display: inline;
 }
 
+.contact-section svg{
+    font-size: 2em;
+    color:rgb(66, 132, 255);
+}
+
 .social-network-section-icon {
     width: 40px;
     height: 40px;
@@ -209,6 +214,8 @@ button:focus {
 form > div {
     margin-bottom: 1rem;
 }
+
+
 
 @media (max-width: 768px) {
     #page-title {

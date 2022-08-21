@@ -17,7 +17,6 @@ export function ProjectsPage()
                 <p className="project-section-description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo praesentium reiciendis beatae veritatis at, quaerat cupiditate necessitatibus tempore voluptatum aperiam sequi quae inventore voluptates qui eum assumenda error culpa ab.
                 </p>
-                < DiAndroid /><DiCss3 /><DiGithubAlt />
               </section>
               <section className="project-section">
                 <div className="project-section-image">

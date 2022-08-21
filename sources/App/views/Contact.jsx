@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {FaTwitter, FaLinkedin} from "react-icons/fa";
 export function ContactPage()
 {
   return (
@@ -28,13 +28,13 @@ export function ContactPage()
           <h2>Find me on social media</h2>
           <ul>
             <li> 
-              <a href="https://www.linkedin.com/in/samy-ibriz-pelaez-a8a8b1177/" target="_blank">
-                <img className="social-network-section-icon" src="assets/icon-linkedin.png" alt="LinkedIn" />
+              <a href="https://www.linkedin.com/in/samy-pelaez/" target="_blank">
+                <FaLinkedin/>
               </a>
             </li>
             <li>
-              <a href="https://www.twitter.com/samyibriz" target="_blank">
-                <img className="social-network-section-icon" src="assets/icon-twitter.png" alt="Twitter" />
+              <a href="https://twitter.com/PelaezSamy" target="_blank">
+                <FaTwitter/>
               </a>
             </li>
           </ul>
