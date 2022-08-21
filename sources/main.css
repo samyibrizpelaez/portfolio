@@ -15,22 +15,22 @@ body {
     height: 100%;
 }
 
-#nav-logo-container{
+#nav-logo-container {
     margin: 20px;
     line-height: 100px;
 }
 
-#nav-logo-link{
+#nav-logo-link {
     text-decoration: none;
 }
 
-#nav-logo{
+#nav-logo {
     padding: 10px;
     width: 80px;
     float: left;
 }
 
-#nav-title{
+#nav-title {
     color: #fff;
     font-size: 3em;
     font-weight: 300;
@@ -42,42 +42,43 @@ body {
 }
 
 .nav-item {
-    
+
     width: 120px;
     text-align: right;
     margin-left: 20px;
     margin-top: 40px;
 }
+
 .nav-item a {
     color: #fff;
     text-decoration: none;
 }
 
-.nav-item a:hover{
+.nav-item a:hover {
     font-weight: bolder;
 }
 
 
-#experience{
+#experience {
     min-width: 100%;
     min-height: 100%;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     top: 0;
     left: 0;
     z-index: -1;
 }
 
-#landing{
-    color:#fff;
+#landing {
+    color: #fff;
 }
 
-h1{
-    color:white;
+h1 {
+    color: white;
     font-weight: 900;
 }
 
-#page-title{
+#page-title {
     font-size: 2.5em;
     font-weight: 300;
     margin: 40px;
@@ -86,34 +87,142 @@ h1{
     right: 0;
 
     writing-mode: vertical-rl;
+    -webkit-text-orientation: upright;
     text-orientation: upright;
     text-transform: uppercase;
-    
+
 }
 
-#page-content{
+#page-content {
     font-size: 2em;
     margin-left: 180px;
     margin-right: 120px;
     margin-top: 60px;
 }
 
-#page-intro{
-    margin-top : 10%;
+.landing-content {
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.nav-icon {
+    filter: hue-rotate(180deg);
+}
+
+.project-section {
+    margin-bottom: 40px;
+    display: inline-block;
+}
+
+.project-section-name{
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.project-section-description {
+    text-align: justify;
+    margin-bottom: 1em;
+}
+
+
+.project-section-image>img {
+    width: 300px;
+    float: left;
+    border: #fff solid 1px;
+    margin-right: 20px;
+}
+
+.project-section > svg{
+    font-size : 2em;
+}
+
+.about-section {
+    margin-top: 40px;
+}
+
+.about-section>ul {
+    display: flex;
+}
+
+.about-section>ul>li {
+    margin-left: 40px;
+    list-style: none;
+    display: flex;
+}
+
+.contact-section {
+    margin-top: 40px;
+}
+
+.contact-section>ul>li {
+    margin-left: 40px;
+    list-style-type: none;
+    display: inline;
+}
+
+.social-network-section-icon {
+    width: 40px;
+    height: 40px;
+}
+
+label,
+input,
+button,
+select,
+legend,
+textarea {
+    font-size: 1.3rem;
+    line-height: 1.2
+}
+
+form {
+    margin-top: 1rem;
+    width: 30em;
+    max-width: 90%;
+    margin-left: 40px;
+}
+
+label {
+    margin-bottom: 0.4rem;
+    display: block;
+}
+
+input,
+textarea {
+    padding: 0.4rem;
+    width: 100%;
+    opacity: 0.95;
+}
+
+button {
+    background: #4f54bf;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    padding: 0.6rem;
+}
+
+button:focus {
+    outline: 2px solid green;
+}
+
+form > div {
+    margin-bottom: 1rem;
 }
 
 @media (max-width: 768px) {
-    #page-title{
+    #page-title {
         font-size: 2em;
         margin-top: 20px;
         margin-left: 20px;
         margin-right: 20px;
     }
-    #page-content{
-        font-size: 1.5em;
+
+    #page-content {
+        font-size: 1.3em;
         margin-left: 80px;
-        margin-right: 80px;
-        margin-top: 40px;
+        margin-right: 60x;
+        margin-top: 20px;
     }
 
     #nav {
@@ -121,41 +230,74 @@ h1{
         position: fixed;
         height: 100%;
     }
-    
-    #nav-logo-container{
+
+    #nav-logo-container {
         margin: 10px;
         line-height: 70px;
     }
-    
-    #nav-logo-link{
+
+    #nav-logo-link {
         text-decoration: none;
     }
-    
-    #nav-logo{
+
+    #nav-logo {
         padding: 10px;
         width: 50px;
         float: left;
     }
-    
-    #nav-title{
+
+    #nav-title {
         color: #fff;
         font-size: 1.5em;
         font-weight: 300;
     }
-    
+
     #nav-collection {
         font-size: 1em;
         list-style: none;
     }
-    
+
     .nav-item {
         width: 20px;
         text-align: left;
         margin-left: 20px;
         margin-top: 20px;
-        
+
         writing-mode: vertical-rl;
+        -webkit-text-orientation: upright;
         text-orientation: upright;
         text-transform: uppercase;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #page-title {
+        font-size: 2em;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #page-content {
+        font-size: 1.5em;
+        margin-left: 180px;
+        margin-right: 360px;
+        margin-top: 40px;
+    }
+}
+
+@media (min-width: 1024px) {
+    #page-title {
+        font-size: 4em;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    #page-content {
+        font-size: 1.5em;
+        margin-left: 180px;
+        margin-right: 360px;
+        margin-top: 40px;
     }
 }

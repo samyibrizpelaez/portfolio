@@ -71,9 +71,13 @@ export default class World
         this.cloudsGeometry         = new THREE.Mesh(this.cloudsGeometry, this.cloudsmaterial)
         this.cloudsGeometry.Name    = 'clouds'
         this.earthMesh.add(this.cloudsGeometry)
-        this.earthMesh.rotation.y   = -Math.PI * 0.1
+        this.earthMesh.rotation.y   = -Math.PI * 0.3
+        this.earthMesh.position.y   = Math.PI /3
+        this.earthMesh.position.x   = -Math.PI /3
+        this.earthMesh.position.z   = -Math.PI /1.5
         this.earthMesh.Name         = 'earth'
         this.scene.add(this.earthMesh)
+
     }
 
     setStars()

@@ -2,11 +2,10 @@
 import * as React from 'react'
 import { Route, Routes, Link} from 'react-router-dom'
 import { HomePage } from './views/Home'
+import { AboutPage } from './views/About'
+import { ContactPage } from './views/Contact'
+import { ProjectsPage } from './views/Projects'
 
-
-const ProjectsPage  = ()    => <h1 id="page-title">Home</h1>
-const AboutPage     = ()    => <h1 id="page-title">About</h1>
-const ContactPage   = ()    => <h1 id="page-title">Contact</h1>
 const NotFoundPage  = ()    => <h1 id="page-title">Not Found</h1>
 
 export function App()
