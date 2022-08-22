@@ -50,7 +50,7 @@ export function ContactPage() {
   const [message, setMessage] = useState('');
   const [emailSent, setEmailSent] = useState(false);
 
-  console.log(import.meta.env.REACT_APP_SITE_KEY)
+  console.log(import.meta.env.VITE_RECAPTCHA_SITE_KEY)
   return (
     <div>
       <h1 id="page-title">Contact</h1>
