@@ -25,7 +25,7 @@ export function ProjectsPage()
                 <h2 className="project-section-name">
                     Project name
                 </h2>
-                <p className="project-description">
+                <p className="project-section-description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo praesentium reiciendis beatae veritatis at, quaerat cupiditate necessitatibus tempore voluptatum aperiam sequi quae inventore voluptates qui eum assumenda error culpa ab.
                 </p>
               </section>
@@ -36,7 +36,7 @@ export function ProjectsPage()
                 <h2 className="project-section-name">
                     Project name
                 </h2>
-                <p className="project-description">
+                <p className="project-section-description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo praesentium reiciendis beatae veritatis at, quaerat cupiditate necessitatibus tempore voluptatum aperiam sequi quae inventore voluptates qui eum assumenda error culpa ab.
                 </p>
               </section>
