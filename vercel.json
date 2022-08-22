@@ -7,10 +7,6 @@
       "config": {
         "distDir": "dist"
       }
-    },
-    {
-      "src": "serverless/*.js",
-      "use": "@vercel/node"
     }
   ],
   "rewrites": [
