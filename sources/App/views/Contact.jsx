@@ -1,19 +1,47 @@
 import React, { useState } from 'react';
 import { FaTwitter, FaLinkedin } from "react-icons/fa";
+import emailjs from 'emailjs-com'
+import { init } from 'emailjs-com';
+import ReCAPTCHA from 'react-google-recaptcha';
+init('user_id');
 
 
 const submit = () => {
   if (contactname && email && message) {
-    // TODO - send mail
+    if(isValidEmail(email)){
 
-    setName('');
-    setEmail('');
-    setMessage('');
-    setEmailSent(true);
-  } else {
+      const serviceId = 'service_tjzcn3l';
+      const templateId = 'template_r0x891b';
+      const templateParams = {
+        from_name: contactname,
+        email: email,
+        message: message,
+        reply_to: email,
+        name: contactname,
+      };
+
+      emailjs.send(serviceId, templateId, templateParams)
+        .then(response => console.log(response))
+        .then(error => console.log(error));
+
+      setName('');
+      setEmail('');
+      setMessage('');
+      setEmailSent(true);
+    }
+    else{
+      alert('Invalid Email');
+    }
+  }
+  else {
     alert('Please fill in all fields.');
   }
 }
+
+const isValidEmail = email => {
+  const regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return regex.test(String(email).toLowerCase());
+};
 
 
 export function ContactPage() {
@@ -22,6 +50,7 @@ export function ContactPage() {
   const [message, setMessage] = useState('');
   const [emailSent, setEmailSent] = useState(false);
 
+  console.log(import.meta.env.REACT_APP_SITE_KEY)
   return (
     <div>
       <h1 id="page-title">Contact</h1>
@@ -41,6 +70,7 @@ export function ContactPage() {
               <label htmlFor="message">Message</label>
               <textarea id="message" placeholder='Your Message' value={message} onChange={e => setMessage(e.target.value)} required />
             </div>
+            <ReCAPTCHA sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY} />
             <button type="submit" onClick={submit}>Send Message</button>
             <span className={emailSent ? 'visible' : null}>Thank you for your message! I will contact you as soon as possible.</span>
           </form>
