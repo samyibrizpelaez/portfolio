@@ -16,7 +16,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/serverless/test.js"
+      "destination": "/"
     }
   ],
   "trailingSlash": false
