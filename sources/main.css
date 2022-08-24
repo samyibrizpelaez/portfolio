@@ -66,7 +66,7 @@ body {
     overflow: hidden;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: -2;
 }
 
 #landing {
@@ -98,9 +98,33 @@ h1 {
     margin-top: 2em;
 }
 
+.landing-content-animation{
+    position: relative;
+    font-weight: 900;
+    font-size: 3em;
+    text-align: center;
+    z-index: -1;
+}
+
 .landing-content {
-    margin-top: 1em;
-    text-transform: uppercase;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 1em;
+    right: 0;
+    opacity: 0; 
+}
+
+.pause-landing-animation{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 2em;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    border: solid #fff .1em;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 .nav-icon {
@@ -133,6 +157,19 @@ h1 {
     font-size : 2em;
 }
 
+.project-section-technologies {
+    margin-top: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: .7em;
+    bottom: 0px;
+}
+
+.project-section-technologies > li {
+    list-style: none;
+    margin-right: .7em;
+}
+
 .about-section {
     margin-top: 2em;
 }
@@ -152,6 +189,8 @@ h1 {
     list-style: none;
     margin: .4em;
 }
+
+
 
 .contact-section {
     margin-top: 2em;
@@ -370,5 +409,8 @@ form > div {
         margin-bottom: .5em;
     }
 
+    
+
 }
+
 

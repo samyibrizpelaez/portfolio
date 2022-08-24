@@ -25,6 +25,7 @@ export function AboutPage()
             <li>WPF</li>
             <li>Windows forms</li>
             <li>C#</li>
+            <li>Powershell</li>
             <li>SQL</li>
             <li>MySQL</li>
             <li>MS-SQL</li>

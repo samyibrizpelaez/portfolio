@@ -17,6 +17,17 @@ export function ProjectsPage()
                 <p className="project-section-description">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo praesentium reiciendis beatae veritatis at, quaerat cupiditate necessitatibus tempore voluptatum aperiam sequi quae inventore voluptates qui eum assumenda error culpa ab.
                 </p>
+                <ul className="project-section-technologies">
+                    <li>PHP</li>
+                    <li>Javascript</li>
+                    <li>jQuery</li>
+                    <li>React.js</li>
+                    <li>Node.js</li>
+                    <li>Vercel</li>
+                    <li>Vite.js</li>
+                    <li>Three.js</li>
+                    <li>WebGL</li>
+                </ul>
               </section>
               <section className="project-section">
                 <div className="project-section-image">
