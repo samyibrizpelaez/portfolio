@@ -9,6 +9,8 @@ export function AboutPage()
         <section className="about-section">
           <h2>Technological Stack</h2>
           <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
             <li>PHP</li>
             <li>Javascript</li>
             <li>jQuery</li>
@@ -17,6 +19,7 @@ export function AboutPage()
             <li>Vercel</li>
             <li>Vite.js</li>
             <li>Three.js</li>
+            <li>Anime.js</li>
             <li>WebGL</li>
             <li>AJAX</li>
             <li>.NET Core</li>

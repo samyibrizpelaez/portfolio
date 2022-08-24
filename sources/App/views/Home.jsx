@@ -170,7 +170,7 @@ export function HomePage()
               A Full-Stack developer
             </p>
             <p className="landing-content ld-3">
-              I build Apps 
+              I build Apps for
             </p>
             <p className="landing-content ld-4">
               Desktops

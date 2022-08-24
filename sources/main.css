@@ -103,16 +103,19 @@ h1 {
     font-weight: 900;
     font-size: 3em;
     text-align: center;
+    line-height: 100%;
     z-index: -1;
+    
+
 }
 
 .landing-content {
     position: absolute;
     margin: auto;
     left: 0;
-    top: 1em;
+    top: 2.4em;
     right: 0;
-    opacity: 0; 
+    opacity: 0;
 }
 
 .pause-landing-animation{
@@ -275,6 +278,13 @@ form > div {
     color: lightgreen;
 }
 
+footer{
+    font-size: .7em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 10px;
+}
 @media (min-width: 768px) and (max-width: 1024px) {
 
     #page-title {
@@ -295,7 +305,7 @@ form > div {
     .project-section-image>img {
         width: 200px;
         float: left;
-        border: #fff solid 1px;
+        border: #fff solid .1px;
         margin-right: 1em;
     }
 
@@ -384,6 +394,9 @@ form > div {
         margin-top: 1em;
     }
 
+    .captchaSpan{
+        margin: 2rem 0rem;
+    }
 
 }
 

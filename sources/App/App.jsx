@@ -37,6 +37,8 @@ export function App()
                 <Route path="/contact"      element={<ContactPage/>}     />
                 <Route path="*"             element={<NotFoundPage />}  />
             </Routes>
+
+            <footer>&copy; <em>2022</em> Samy Ibriz Pelaez</footer>
         </div>
         
     )
