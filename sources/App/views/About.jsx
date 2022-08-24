@@ -57,7 +57,7 @@ export function AboutPage()
         <section className="about-section">
           <h2>Methodologies</h2>
           <ul>
-            <li>6 Hats</li>
+            <li>Cascade</li>
             <li>CPM</li>
             <li>Agile</li>
             <li>Scrum</li>

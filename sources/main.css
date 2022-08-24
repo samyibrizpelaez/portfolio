@@ -187,7 +187,7 @@ form {
     margin-top: 1rem;
     width: 30em;
     max-width: 90%;
-    margin-left: 40px;
+    margin-left: 2rem;
 }
 
 label {
@@ -221,9 +221,18 @@ form > div {
     margin-bottom: 1rem;
 }
 
-form > span {
+.captchaSpan{
     float: left;
-    margin: .5em 0em;
+    margin: 2rem 2rem;
+    width: 100%;
+    
+}
+
+.negativeSpan{
+    color: crimson;
+}
+
+.positiveSpan{
     color: lightgreen;
 }
 
