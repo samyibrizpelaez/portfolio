@@ -285,6 +285,8 @@ footer{
     left: 0;
     margin: 10px;
 }
+
+
 @media (min-width: 768px) and (max-width: 1024px) {
 
     #page-title {
@@ -308,6 +310,7 @@ footer{
         border: #fff solid .1px;
         margin-right: 1em;
     }
+
 
 }
 
@@ -420,6 +423,14 @@ footer{
 
     .about-section>h2{
         margin-bottom: .5em;
+    }
+
+    .g-recaptcha{
+        transform: scale(0.64); 
+        -webkit-transform: scale(0.64); 
+        transform-origin: 0 0; 
+        -webkit-transform-origin: 0 0;
+    
     }
 
     

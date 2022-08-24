@@ -16,7 +16,7 @@ projects.push({
     image: "assets/projects/portfolio.png",
     description: "Building your own web portfolio as a developer is the best way to present yourself. Starting with a simple concept is key. \n"+
     "It is built as a responsibe single page application. The 3D earth crowns the scene while the landing application makes a first contact with the visitor.",
-    technologies: ["Javascript","React", "Three.js", "Anime.js", "ReCaptcha", "HTML5", "CSS3"]
+    technologies: ["Javascript","React", "Three.js", "Anime.js", "ReCaptcha", "HTML5", "CSS3"],
 });
 
 export function ProjectSections(props) {

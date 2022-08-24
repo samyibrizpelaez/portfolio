@@ -114,6 +114,7 @@ export function ContactPage() {
               </div>
 
               <ReCAPTCHA
+                className={'g-recaptcha'}
                 ref={recaptchaRef}
                 sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
                 onChange={onChange}
