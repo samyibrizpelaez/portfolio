@@ -23,12 +23,8 @@ export function ProjectSections(props) {
 
     const projects = props.projects.map((project) => {
 
-        const technologies = project.technologies.map((technology) => {
-            <li key={technology.key}>{technology.value}</li>
-        })
-
         console.log(project)
-        console.log( technologies)
+        console.log(project.technologies[0])
         return <section key={project.id} className="project-section">
                 <div className="project-section-image">
                     <img src={project.image} alt="Project image not available" />
@@ -40,7 +36,11 @@ export function ProjectSections(props) {
                     {project.description}
                 </p>
                 <ul className="project-section-technologies">
-                    {technologies}
+                    {
+                        project.technologies.map((technology) => {
+                            return <li key={technology}>{technology}</li>
+                        })
+                    }
                 </ul>
             </section>
         

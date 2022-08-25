@@ -28,6 +28,7 @@ export function App()
                         <li className="nav-item"><Link to="about">About</Link></li>
                         <li className="nav-item"><Link to="contact">Contact</Link></li>
                     </ul>
+                    <footer>&copy; <em>2022</em> Samy Ibriz Pelaez</footer>
             </div>
 
             <Routes>
@@ -38,7 +39,7 @@ export function App()
                 <Route path="*"             element={<NotFoundPage />}  />
             </Routes>
 
-            <footer>&copy; <em>2022</em> Samy Ibriz Pelaez</footer>
+
         </div>
         
     )

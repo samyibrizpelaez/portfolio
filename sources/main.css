@@ -137,6 +137,7 @@ h1 {
 .project-section {
     margin: .5em 0em;
     display: inline-block;
+    white-space: pre-line;
 }
 
 .project-section-name{
@@ -265,7 +266,7 @@ form > div {
 
 .captchaSpan{
     float: left;
-    margin: 2rem 2rem;
+    margin: 1rem 1rem;
     width: 100%;
     
 }
