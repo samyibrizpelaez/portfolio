@@ -141,12 +141,15 @@ h1 {
 }
 
 .project-section-name{
-    font-size: 1em;
+    font-size: 1.2em;
     font-weight: 600;
 }
 
 .project-section-catchphrase{
-    font-size: .9em;
+    font-size: .8em;
+    width: 100%;
+    margin-bottom: .5em;
+    text-align: center;
 }
 
 .project-section-description {
@@ -164,6 +167,9 @@ h1 {
 .project-section > svg{
     font-size : 2em;
 }
+
+
+
 
 .project-section-technologies {
     margin-top: 1em;
