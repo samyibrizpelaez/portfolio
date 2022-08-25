@@ -13,7 +13,7 @@ export function HomePage()
     var landingContent = {
       opacityIn   : [0,1],
       scaleIn     : [0.2, 1],
-      scaleOut    : 3,
+      scaleOut    : 2,
       durationIn  : 800,
       durationOut : 800,
       delay       : 600,

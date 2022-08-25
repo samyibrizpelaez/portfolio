@@ -5,18 +5,21 @@ const projects = [];
 projects.push({
     id:"1",
     name: "Portfolio",
+    catchphrase: "Code is my Hammer!",
     image: "assets/projects/portfolio.png",
-    description: "Building your own web portfolio as a developer is the best way to present yourself. Starting with a simple concept is key. \n"+
-    "It is built as a responsibe single page application. The 3D earth crowns the scene while the landing application makes a first contact with the visitor.",
+    description: "Building your own web portfolio as a developer is the best way to present yourself. Starting with a simple concept is key. \n \n"+
+    "It is built as a responsible single page application. The 3D earth crowns the scene while the landing application makes a first contact with the visitor.",
     technologies: ["Javascript","React", "Three.js", "Anime.js", "ReCaptcha", "HTML5", "CSS3"]
 });
 projects.push({
     id:"2",
-    name: "Portfolio",
-    image: "assets/projects/portfolio.png",
-    description: "Building your own web portfolio as a developer is the best way to present yourself. Starting with a simple concept is key. \n"+
-    "It is built as a responsibe single page application. The 3D earth crowns the scene while the landing application makes a first contact with the visitor.",
-    technologies: ["Javascript","React", "Three.js", "Anime.js", "ReCaptcha", "HTML5", "CSS3"],
+    name: "PasswordCard",
+    catchphrase: "Anywhere, Everywhere!",
+    image: "assets/projects/passwordCards.png",
+    description: "The user constant need to authentify itself, has motivated the market to produce a whole range of solutions to help the user manage its credetials. \n"+
+    "Therefore, most of them require direct access to the internet or a specific device. \n\n Consequently, PasswordCard, brings a software solution to generate password cards " +
+    "which can be printed in a credit card (ISO/IEC 7810) and bring to the user a flexible, secure and persistent solution to bring their credentials everywhere in their pockets.",
+    technologies: ["UWP", "MySQL", "PDFSharpCore"],
 });
 
 export function ProjectSections(props) {
@@ -32,6 +35,9 @@ export function ProjectSections(props) {
                 <h2 className="project-section-name">
                     {project.name}
                 </h2>
+                <i className="project-section-catchphrase">
+                    {project.catchphrase}
+                </i>
                 <p className="project-section-description">
                     {project.description}
                 </p>

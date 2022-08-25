@@ -135,7 +135,7 @@ h1 {
 }
 
 .project-section {
-    margin: .5em 0em;
+    margin: .5em 0em 2em 0em;
     display: inline-block;
     white-space: pre-line;
 }
@@ -143,6 +143,10 @@ h1 {
 .project-section-name{
     font-size: 1em;
     font-weight: 600;
+}
+
+.project-section-catchphrase{
+    font-size: .9em;
 }
 
 .project-section-description {
@@ -167,6 +171,7 @@ h1 {
     flex-wrap: wrap;
     font-size: .7em;
     bottom: 0px;
+    font-size: medium;
 }
 
 .project-section-technologies > li {
