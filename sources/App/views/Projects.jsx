@@ -49,7 +49,7 @@ projects.push({
     id: "5",
     name: "Yatzee Mobile App",
     catchphrase: "\"The dice are cast!\"",
-    image: "assets/projects/Yatzee.gif",
+    image: "assets/projects/yatzee.gif",
     description: "Yatzee is based in a traditional dice game, adapted by Milton Bradley. The player roll the dices and score combinations in the board. The game is won by the player who scores the most points.",
     technologies: ["Android SDK", "Java", "SQLite", "Smarphone sensors"],
 });
