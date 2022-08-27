@@ -82,8 +82,6 @@ export function ProjectSections(props) {
 
     const projects = props.projects.map((project) => {
 
-        console.log(project)
-        console.log(project.technologies[0])
         return <section key={project.id} className="project-section">
 
             <div className="project-section-image">
@@ -105,7 +103,7 @@ export function ProjectSections(props) {
                     })
                 }
             </ul>
-            
+
         </section>
 
     }
