@@ -8,9 +8,9 @@ projects.push({
     name: "Portfolio",
     catchphrase: "\"Code is my Hammer!\"",
     image: "assets/projects/portfolio.gif",
-    description: "Building your own web portfolio as a developer is the best way to present yourself. Starting with a simple concept is key. \n \n"+
-    "It is built as a responsible single page application. The 3D earth crowns the scene while the landing application makes a first contact with the visitor.",
-    technologies: ["HTML5", "CSS3", "Javascript","React", "Three.js", "Anime.js", "ReCaptcha"]
+    description: "Building your own web portfolio as a developer is the best way to present yourself. Starting with a simple concept is key. \n \n" +
+        "It is built as a responsible single page application. The 3D earth crowns the scene while the landing application makes a first contact with the visitor.",
+    technologies: ["HTML5", "CSS3", "Javascript", "React", "Three.js", "Anime.js", "ReCaptcha"]
 });
 projects.push({
     id: "1",
@@ -18,7 +18,7 @@ projects.push({
     catchphrase: "\"Anywhere, Everywhere!\"",
     image: "assets/projects/passwordCards.gif",
     description: "PasswordCard, brings a software solution to generate password cards " +
-    "which can be printed in a credit card (ISO/IEC 7810) and bring to the user a flexible, secure and persistent solution to generate, manage and bring their credentials everywhere in their pockets.",
+        "which can be printed in a credit card (ISO/IEC 7810) and bring to the user a flexible, secure and persistent solution to generate, manage and bring their credentials everywhere in their pockets.",
     technologies: ["C#", "XAML", "UWP", "MySQL", "PDFSharpCore"],
 });
 projects.push({
@@ -43,7 +43,7 @@ projects.push({
     catchphrase: "\"Did you check the weather?\"",
     image: "assets/projects/Weather-LA.gif",
     description: "Did you ever wanted to go to the swimming pool and forget to check the weather? If yes, then a weather component has never been more usefull. It might even become a good assets for your customers or communities!",
-    technologies: ["HTML5", "CSS3", "Javascript",  "PHP", "Weather API"],
+    technologies: ["HTML5", "CSS3", "Javascript", "PHP", "Weather API"],
 });
 projects.push({
     id: "5",
@@ -85,31 +85,33 @@ export function ProjectSections(props) {
         console.log(project)
         console.log(project.technologies[0])
         return <section key={project.id} className="project-section">
-                <div className="project-section-image">
-                    <img src={project.image} alt="Project image" />
-                </div>
-                <h2 className="project-section-name">
-                    {project.name}
-                </h2>
-                <div className="project-section-catchphrase">
-                    <i>{project.catchphrase}</i>
-                </div>
-                <p className="project-section-description">
-                    {project.description}
-                </p>
-                <ul className="project-section-technologies">
-                    {
-                        project.technologies.map((technology) => {
-                            return <li key={technology}>{technology}</li>
-                        })
-                    }
-                </ul>
-            </section>
-        
+
+            <div className="project-section-image">
+                <img src={project.image} alt="Project image" />
+            </div>
+            <h2 className="project-section-name">
+                {project.name}
+            </h2>
+            <div className="project-section-catchphrase">
+                <i>{project.catchphrase}</i>
+            </div>
+            <p className="project-section-description">
+                {project.description}
+            </p>
+            <ul className="project-section-technologies">
+                {
+                    project.technologies.map((technology) => {
+                        return <li key={technology}>{technology}</li>
+                    })
+                }
+            </ul>
+            
+        </section>
+
     }
     )
     return projects
-    
+
 }
 
 export function ProjectsPage() {
@@ -118,12 +120,12 @@ export function ProjectsPage() {
         <div>
             <h1 id="page-title">Projects</h1>
             <div id="page-content">
-        
-                <ProjectSections projects={projects}/>
-            
+
+                <ProjectSections projects={projects} />
+
             </div>
         </div>
-              
+
     )
 
 }
