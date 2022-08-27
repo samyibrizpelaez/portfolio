@@ -42,7 +42,7 @@ export function AboutPage()
             <li>TA.py</li>
             <li>Github</li>
             <li>Visual Studio</li>
-            <li>VS Code</li>
+            <li>Visual Studio Code</li>
             <li>UWamp</li>
             <li>XAMPP</li>
             <li>DB-Main</li>
@@ -53,9 +53,9 @@ export function AboutPage()
         <section className="about-section">
           <h2>Langage</h2>
           <ul>
-            <li>Spanish</li>
-            <li>French</li>
-            <li>English</li>
+            <li>Spanish - <b>Mother tongue</b></li>
+            <li>French  - <b>Mother tongue</b></li>
+            <li>English - <b>C1</b></li>
           </ul>
         </section>
         <section className="about-section">

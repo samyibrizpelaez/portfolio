@@ -70,15 +70,15 @@ export function ContactPage() {
           name: contactname,
         };
   
+
         emailjs.send(serviceId, templateId, templateParams, publicKey)
-          .then(response => console.log(response))
-          .then(error => console.log(error));
-  
+        .then(response => console.log(response))
+        .then(error => console.log(error));
+
         setName('');
         setEmail('');
         setMessage('');
         setEmailSent(true);
-        
       }
       else{
         alert('Invalid Email');
@@ -102,15 +102,15 @@ export function ContactPage() {
             <form onSubmit={submit}>
               <div>
                 <label htmlFor="name">Name</label>
-                <input type="text" id="name" placeholder="Your Name" value={contactname} onChange={e => setName(e.target.value)} required />
+                <input type="text" id="name" placeholder="Mr Munster" value={contactname} onChange={e => setName(e.target.value)} required />
               </div>
               <div>
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" placeholder="Your Email" value={email} onChange={e => setEmail(e.target.value)} required />
+                <input type="email" id="email" placeholder="munster@mail.com" value={email} onChange={e => setEmail(e.target.value)} required />
               </div>
               <div>
                 <label htmlFor="message">Message</label>
-                <textarea id="message" placeholder='Your Message' value={message} onChange={e => setMessage(e.target.value)} required />
+                <textarea id="message" placeholder='Mr SD, may we talk about ...' value={message} onChange={e => setMessage(e.target.value)} required />
               </div>
 
               <ReCAPTCHA
