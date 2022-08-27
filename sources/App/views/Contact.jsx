@@ -142,12 +142,12 @@ export function ContactPage() {
           <ul>
             <li>
               <a href="https://www.linkedin.com/in/samy-pelaez/" target="_blank">
-                <img class="icon-social" src="assets/icon-linkedin.gif" alt="" srcset="" />
+                <img className="icon-social" src="assets/icon-linkedin.gif" alt="" />
               </a>
             </li>
             <li>
               <a  href="https://twitter.com/PelaezSamy" target="_blank">
-                <img class="icon-social" src="assets/icon-twitter.gif" alt="" srcset="" />
+                <img className="icon-social" src="assets/icon-twitter.gif" alt="" />
               </a>
             </li>
           </ul>
