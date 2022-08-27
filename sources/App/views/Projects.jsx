@@ -86,7 +86,7 @@ export function ProjectSections(props) {
         console.log(project.technologies[0])
         return <section key={project.id} className="project-section">
                 <div className="project-section-image">
-                    <img src={project.image} alt="Project image not available" />
+                    <img src={project.image} alt="Project image" />
                 </div>
                 <h2 className="project-section-name">
                     {project.name}
