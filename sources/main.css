@@ -305,6 +305,18 @@ footer{
     height: 2em;
 }
 
+@media (min-width: 2048px){
+    .landing-content {
+        position: fixed;
+        margin: auto;
+        left:0;
+        top: 20%;
+        right: 30%;
+        opacity: 0;
+        padding: 4em;
+    }
+}
+
 @media (min-width: 768px) and (max-width: 1024px) {
 
     #page-title {
