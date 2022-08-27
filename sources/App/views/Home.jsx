@@ -13,10 +13,10 @@ export function HomePage()
     var landingContent = {
       opacityIn   : [0,1],
       scaleIn     : [0.2, 1],
-      scaleOut    : 2,
+      scaleOut    : 3,
       durationIn  : 800,
-      durationOut : 800,
-      delay       : 600,
+      durationOut : 600,
+      delay       : 500,
     };
 
     animationRef.current = anime.timeline({loop:true})
@@ -157,12 +157,10 @@ export function HomePage()
 
   return (
     <div>
-      <section>
-        
+      <section className="landing-section">
         <h1 id="page-title">Home</h1>
-       
-        <div id="page-content">
           <div className="landing-content-animation">
+
             <p className="landing-content ld-1">
               I am Samy
             </p>
@@ -173,10 +171,10 @@ export function HomePage()
               I build Apps for
             </p>
             <p className="landing-content ld-4">
-              Desktops
+              Desktop
             </p>
             <p className="landing-content ld-5">
-              Browsers
+              Browser
             </p>
             <p className="landing-content ld-6">
               Mobile
@@ -188,7 +186,6 @@ export function HomePage()
               <strong>Looking forward to work with you!</strong>
             </p>
           </div>
-        </div>
       </section>
 
       

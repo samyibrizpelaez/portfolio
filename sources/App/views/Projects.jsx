@@ -8,7 +8,7 @@ projects.push({
     name: "Portfolio",
     catchphrase: "\"Code is my Hammer!\"",
     image: "assets/projects/portfolio.gif",
-    description: "Building your own web portfolio as a developer is the best way to present yourself. Starting with a simple concept is key. \n \n" +
+    description: "Building your own web portfolio as a developer is the best way to present yourself. Starting with a simple concept is key. \n" +
         "It is built as a responsible single page application. The 3D earth crowns the scene while the landing application makes a first contact with the visitor.",
     technologies: ["HTML5", "CSS3", "Javascript", "React", "Three.js", "Anime.js", "ReCaptcha"]
 });
@@ -93,6 +93,7 @@ export function ProjectSections(props) {
             <div className="project-section-catchphrase">
                 <i>{project.catchphrase}</i>
             </div>
+
             <p className="project-section-description">
                 {project.description}
             </p>
@@ -103,6 +104,7 @@ export function ProjectSections(props) {
                     })
                 }
             </ul>
+
 
         </section>
 
