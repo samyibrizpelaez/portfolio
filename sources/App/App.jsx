@@ -16,7 +16,7 @@ export function App()
             <header>
                 <div id="nav-logo-container">
                     <a href="/" id="nav-logo-link">
-                        <img id="nav-logo" src="assets/LogoSamyCurve.png" alt="Logo"/>
+                        <img id="nav-logo" src="assets/LogoSamyRainbow.gif" alt="Logo"/>
                         <h1 id="nav-title">SamyDev</h1>
                     </a>
                 </div>
