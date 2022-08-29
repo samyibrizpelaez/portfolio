@@ -68,8 +68,13 @@ header{
     text-align: right;
     margin-left: 20px;
     margin-top: 40px;
+   
 }
 
+.nav-item img{
+    width: 35px;
+    display: none;
+}
 .nav-item a {
     color: #fff;
     text-decoration: none;
@@ -443,8 +448,20 @@ footer{
         width: 15vw;
     }
 
+    .nav-item img{
+        width: 25px;
+        height: 25px;
+        display:block;
+    }
+
+
+    .nav-item span{
+        display: none;
+    }
+
     .nav-item {
         width: 4vw;
+        margin-left: 1.3em;
         writing-mode: vertical-rl;
         -webkit-text-orientation: upright;
         text-orientation: upright;
@@ -548,6 +565,11 @@ footer{
     }
 
 
+    .nav-item{
+        font-size: .6em;
+        margin: 3em 4em;
+        max-width: 20vw;
+    }
 
 }
 
@@ -562,6 +584,12 @@ footer{
 
     .nav-item{
         font-size: .8em;
+    }
+
+    .nav-item{
+        font-size: .6em;
+        margin: 3em 3.4em;
+        max-width: 20vw;
     }
 }
 
@@ -580,7 +608,7 @@ footer{
 
     .nav-item{
         font-size: .6em;
-        margin: 3em .2em;
+        margin: 3em .7em;
         max-width: 20vw;
     }
 
@@ -588,6 +616,11 @@ footer{
         max-width: 20vw;
     }
 
+    .nav-item img{
+        width: 20px;
+        height: 20px;
+    }
+    
     #nav-logo{
         height: 35px;
         width: 35px;

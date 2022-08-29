@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import anime from 'animejs';
 import { useRef } from 'react';
 
-
 export function HomePage()
 {
 

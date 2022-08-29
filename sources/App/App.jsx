@@ -22,10 +22,35 @@ export function App() {
             </header>
             <div id="nav">
                 <ul id="nav-collection">
-                    <li className="nav-item"><Link to="/">Home</Link></li>
-                    <li className="nav-item"><Link to="projects">Projects</Link></li>
-                    <li className="nav-item"><Link to="about">About</Link></li>
-                    <li className="nav-item"><Link to="contact">Contact</Link></li>
+
+                    <li className="nav-item">
+                        <Link to="/">
+                            <span>Home</span>
+                            <img src="assets/icons/home.svg" alt="Home" />
+                        </Link>
+                    </li>
+
+                    <li className="nav-item">
+                        <Link to="projects">
+                            <span>Projects</span>
+                            <img src="assets/icons/project.svg" alt="Projects" />
+                        </Link>
+                    </li>
+
+                    <li className="nav-item">
+                        <Link to="about">
+                            <span>About</span>
+                            <img src="assets/icons/about.svg" alt="About" />
+                        </Link>
+                    </li>
+
+                    <li className="nav-item">
+                        <Link to="contact">
+                            <span>Contact</span>
+                            <img src="assets/icons/contact.svg" alt="Contact" />
+                        </Link>
+                    </li>
+
                 </ul>
                 <footer>&copy; <em>2022</em> Samy Ibriz Pelaez</footer>
             </div>

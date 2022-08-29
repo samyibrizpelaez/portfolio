@@ -78,6 +78,9 @@ projects.push({
     technologies: ["C#"],
 });
 
+
+
+
 export function ProjectSections(props) {
 
     const projects = props.projects.map((project) => {
