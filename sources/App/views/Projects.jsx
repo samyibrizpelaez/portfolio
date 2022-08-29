@@ -42,7 +42,7 @@ projects.push({
     name: "Weather Component",
     catchphrase: "\"Did you check the weather?\"",
     image: "assets/projects/Weather-LA.gif",
-    description: "Did you ever wanted to go to the swimming pool and forget to check the weather? If yes, then a weather component has never been more usefull. It might even become a good assets for your customers or communities!",
+    description: "Did you ever wanted to go to the swimming pool and forget to check the weather? If yes, then a weather component has never been more usefull. It might even become a good asset for your customers or communities!",
     technologies: ["HTML5", "CSS3", "Javascript", "PHP", "Weather API"],
 });
 projects.push({

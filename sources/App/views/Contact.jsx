@@ -138,8 +138,10 @@ export function ContactPage() {
           }
         </section>
         <section className="contact-section">
-          <h2>Find me on social media</h2>
           <ul>
+            <li>
+              <h3>Find me on : </h3>
+            </li>
             <li>
               <a href="https://www.linkedin.com/in/samy-pelaez/" target="_blank">
                 <img className="icon-social" src="assets/icon-linkedin.gif" alt="" />

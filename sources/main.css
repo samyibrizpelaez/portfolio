@@ -79,7 +79,6 @@ header{
     font-weight: bolder;
 }
 
-
 #experience {
     min-width: 100%;
     min-height: 100%;
@@ -141,7 +140,6 @@ h1 {
     
 }
 
-
 .nav-icon {
     filter: hue-rotate(180deg);
 }
@@ -184,9 +182,6 @@ h1 {
     margin-bottom: .5em;
 }
 
-
-
-
 .project-section-technologies {
     margin-top: 1em;
     display: flex;
@@ -216,41 +211,36 @@ h1 {
     flex-wrap: wrap;
     margin-left: .2em;
 }
-    
-
 
 .about-section>ul>li {
     list-style: none;
     margin: .4em;
 }
 
-
-
 .contact-section {
-    margin-top: 2em;
+    margin-top: 1em;
+}
+
+.contact-section h3{
+    font-size: .8em;
 }
 
 .contact-section>ul{
-    margin-left: 1em;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .contact-section>ul>li {
-
-    list-style-type: none;
-    display: inline;
+    line-height: 1.5em;
+    margin-right: .5em;
 }
-
 
 .icon-social{
-    width: 2em;
-    height: 2em;
-    margin: .4em 1em 3em 0em;
-    float: left;
+    width: 1.5em;
+    height: 1.5em;
 
 }
-
-
-
 
 label,
 input,
@@ -371,11 +361,7 @@ footer{
         border: #fff solid .1px;
         margin-right: 1em;
     }
-
-    .contact-section {
-        margin-right: 1em;
-    }
-
+    
     .about-section {
         margin-top: 2em;
     }
@@ -474,19 +460,8 @@ footer{
         margin-right: 0px;
     }
 
-    .contact-section{
-        margin-top: 1em;
-    }
-
     .icon-social{
         float: left;
-    }
-
-    .contact-section>ul>li {
-        margin-left: 0px;
-        margin-right: 20px;
-        list-style-type: none;
-        display: inline;
     }
 
     .project-section-image>img {
@@ -507,10 +482,6 @@ footer{
     #nav-logo {
         width: 50px;
         height: 50px;
-    }
-
-    .contact-section>ul{
-        margin-left: 0em;
     }
 
     footer{
@@ -643,13 +614,7 @@ footer{
         margin-bottom: 1em;
     }
 
-    .g-recaptcha{
-        transform:scale(0.75);
-        -webkit-transform:scale(0.75);
-        transform-origin:0 0;
-        -webkit-transform-origin:0 0;
-    
-    }
+
 
     .project-section-technologies{
         font-size: .5em;
@@ -662,6 +627,14 @@ footer{
         width: 70vw;
         float: left;
         border: #fff solid 1px;
+    }
+
+    .g-recaptcha{
+        transform:scale(0.75);
+        -webkit-transform:scale(0.75);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    
     }
 }
 

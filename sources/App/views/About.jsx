@@ -51,7 +51,7 @@ export function AboutPage()
           </ul>
         </section>
         <section className="about-section">
-          <h2>Langage</h2>
+          <h2>Language</h2>
           <ul>
             <li>Spanish - <b>Mother tongue</b></li>
             <li>French  - <b>Mother tongue</b></li>
