@@ -22,6 +22,7 @@ export function AboutPage()
             <li>HTML5</li>
             <li>CSS3</li>
             <li>C#</li>
+            <li>Java</li>
             <li>PHP</li>
             <li>Javascript</li>
             <li>Python</li>
@@ -36,6 +37,7 @@ export function AboutPage()
         <section className="about-section">
           <h3>Frameworks</h3>
           <ul>
+            <li>Bootstrap</li>
             <li>jQuery</li>
             <li>React.js</li>
             <li>Node.js</li>
@@ -51,11 +53,22 @@ export function AboutPage()
             <li>WPF</li>
             <li>Windows forms</li>
             <li>Entity Framework</li>
+            <li>PDFSharpCore</li>
             <li>Django</li>
             <li>Pandas</li>
             <li>Numpy</li>
             <li>MatPlot</li>
             <li>TA.py</li>
+          </ul>
+        </section>
+        <section className="about-section">
+          <h3>API</h3>
+          <ul>
+            <li>OpenWeather</li>
+            <li>OpenStreetMap</li>
+            <li>Google Maps</li>
+            <li>Binance</li>
+            <li>EmailJS</li>
           </ul>
         </section>
         <section className="about-section">

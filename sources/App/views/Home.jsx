@@ -66,41 +66,41 @@ export function HomePage()
       targets: '.ld-4',
       opacity:landingContent.opacityIn,
       scale: landingContent.scaleIn,
-      duration:landingContent.durationIn
+      duration:landingContent.durationIn / 2
     })
     .add({
       targets: '.ld-4',
       opacity: 0,
       scale: landingContent.scaleOut,
-      duration:landingContent.durationOut,
+      duration:landingContent.durationOut / 2,
       easing: "easeInExpo",
-      delay: landingContent.delay
+      delay: landingContent.delay / 2
     })
     .add({
       targets: '.ld-5',
       opacity:landingContent.opacityIn,
       scale: landingContent.scaleIn,
-      duration:landingContent.durationIn
+      duration:landingContent.durationIn / 2
     })
     .add({
       targets: '.ld-5',
       opacity: 0,
       scale: landingContent.scaleOut,
-      duration:landingContent.durationOut,
+      duration:landingContent.durationOut / 2,
       easing: "easeInExpo",
-      delay: landingContent.delay
+      delay: landingContent.delay / 2
     })
     .add({
       targets: '.ld-6',
       opacity:landingContent.opacityIn,
       scale: landingContent.scaleIn,
-      duration:landingContent.durationIn
+      duration:landingContent.durationIn / 2
     })
     .add({
       targets: '.ld-6',
       opacity: 0,
       scale: landingContent.scaleOut,
-      duration:landingContent.durationOut,
+      duration:landingContent.durationOut / 2,
       easing: "easeInExpo",
       delay: landingContent.delay
     })
