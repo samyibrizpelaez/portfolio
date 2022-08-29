@@ -6,26 +6,25 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 
 export function ContactPage() {
-  
+
   const [contactname, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
   const [captchaValid, setCaptchaValid] = useState(null);
   const [emailSent, setEmailSent] = useState(false);
-  
+
   const recaptchaRef = useRef(null);
 
   // Captcha Validation
   const onChange = () => {
 
-    if(recaptchaRef.current.getValue())
-    {
+    if (recaptchaRef.current.getValue()) {
       console.log(recaptchaRef.current.getValue())
 
       //Validate token with google
     }
-    
+
   }
 
   // Email syntax validation
@@ -35,33 +34,32 @@ export function ContactPage() {
   };
 
   const submit = (e) => {
-  
+
     e.preventDefault();
 
-    if(recaptchaRef.current.getValue())
-    {
-      //valid 
+    if (recaptchaRef.current.getValue()) {
+
       setCaptchaValid(true);
 
       sendEmail();
     }
-    else
-    {
-      //valid 
+    else {
+
       setCaptchaValid(false);
-      // not valid
+
     }
 
-      
+
   }
 
   const sendEmail = () => {
     if (contactname && email && message) {
-      if(isValidEmail(email)){
+      if (isValidEmail(email)) {
 
-        const publicKey = 'ulX6BcWLt4ekOb1kY';
-        const serviceId = 'service_tjzcn3l';
-        const templateId = 'template_r0x891b';
+        const publicKey   = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+        const serviceId   = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+        const templateId  = import.meta.env.VITE_EMAILJS_TEMPLATE;
+
         const templateParams = {
           from_name: contactname,
           email: email,
@@ -69,18 +67,18 @@ export function ContactPage() {
           reply_to: email,
           name: contactname,
         };
-  
+
 
         emailjs.send(serviceId, templateId, templateParams, publicKey)
-        .then(response => console.log(response))
-        .then(error => console.log(error));
+          .then(response => console.log(response))
+          .then(error => console.log(error));
 
         setName('');
         setEmail('');
         setMessage('');
         setEmailSent(true);
       }
-      else{
+      else {
         alert('Invalid Email');
       }
     }
@@ -134,7 +132,7 @@ export function ContactPage() {
           {emailSent &&
 
             <span className="captchaSpan positiveSpan">Thank you for your message! I will contact you as soon as possible.</span>
-          
+
           }
         </section>
         <section className="contact-section">
@@ -148,7 +146,7 @@ export function ContactPage() {
               </a>
             </li>
             <li>
-              <a  href="https://twitter.com/PelaezSamy" target="_blank">
+              <a href="https://twitter.com/PelaezSamy" target="_blank">
                 <img className="icon-social" src="assets/icon-twitter.gif" alt="" />
               </a>
             </li>

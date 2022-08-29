@@ -337,14 +337,13 @@ footer{
 
 }
 
-@media (min-width: 1024px) and (max-width: 1200px) {
+@media (max-width: 1200px) {
 
     #page-title {
         font-size: 3em;
     }
 
     #page-content{
-        
         margin-left: 6.5em;
         margin-right: 6.5em;
         margin-top: 5em;
@@ -371,6 +370,7 @@ footer{
         margin-left: 22vw;
         margin-right: 12vw;
     }
+
 
 
 }
@@ -455,6 +455,14 @@ footer{
         width: 1em;
     }
 
+    footer{
+        writing-mode: vertical-rl;
+        margin: 0em;
+        margin: 3em;
+        font-size: .1em;
+    }
+
+
     form {
         margin-left: 0px;
         margin-right: 0px;
@@ -484,11 +492,7 @@ footer{
         height: 50px;
     }
 
-    footer{
-        font-size: .5em;
-    }
 
-    
 
 }
 
@@ -561,7 +565,7 @@ footer{
     }
 }
 
-@media (min-width: 200px)  and (max-width: 310px)
+@media (max-width: 310px)
 {
     .landing-content {
         font-size: 2em;
@@ -630,8 +634,8 @@ footer{
     }
 
     .g-recaptcha{
-        transform:scale(0.75);
-        -webkit-transform:scale(0.75);
+        transform:scale(0.63);
+        -webkit-transform:scale(0.63);
         transform-origin:0 0;
         -webkit-transform-origin:0 0;
     
