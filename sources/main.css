@@ -669,4 +669,17 @@ footer{
     max-height: 95%;
 }
 
+#span-data-protection{
+    font-size: .35em;
+}
+
+#span-data-protection ul{
+    list-style-type: none;
+}
+
+#span-data-protection a{
+    text-decoration: none;
+    color: lightseagreen;
+    display: inline-block;
+}
 

@@ -119,6 +119,7 @@ export function ContactPage() {
               />
 
               <button id="contactBtn" type="submit">Send Message</button>
+
             </form>
 
           }
@@ -153,6 +154,20 @@ export function ContactPage() {
           </ul>
 
         </section>
+        <section className="contact-section">
+        <span id="span-data-protection">
+            All the data treated in this website is ruled by : 
+            <ul>
+              <li>
+                <a href="https://fedlex.data.admin.ch/eli/cc/1993/1945_1945_1945">FADP : Federal Act on Data Protection</a>
+              </li>
+              <li>
+                <a href="https://gdpr.eu/tag/gdpr/">GDPR : European General Data Protection Regulation</a>
+              </li>
+            </ul>
+          </span>
+        </section>
+        
 
       </div>
     </div>
