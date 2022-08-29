@@ -642,5 +642,31 @@ footer{
     }
 }
 
+.lightbox-on{
+    position: fixed;
+    margin: auto;
+    padding: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index:30;
+    text-align: center;
+    overflow: hidden;
+        
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.lightbox-on >img{
+    
+    max-width: 95%;
+    max-height: 95%;
+}
 
 

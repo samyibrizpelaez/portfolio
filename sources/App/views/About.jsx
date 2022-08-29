@@ -6,6 +6,7 @@ export function AboutPage()
     <div>
       <h1 id="page-title">About</h1>
       <div id="page-content">
+        
         <section className="about-section">
           <h2>Language</h2>
           <ul>
@@ -61,6 +62,7 @@ export function AboutPage()
             <li>TA.py</li>
           </ul>
         </section>
+
         <section className="about-section">
           <h3>API</h3>
           <ul>
@@ -71,6 +73,7 @@ export function AboutPage()
             <li>EmailJS</li>
           </ul>
         </section>
+
         <section className="about-section">
           <h3>Other tools</h3>
           <ul>

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {LightBoxDisplay} from '../components/LightBox'
 const count = 0;
 
 const projects = [];
@@ -83,10 +83,7 @@ export function ProjectSections(props) {
     const projects = props.projects.map((project) => {
 
         return <section key={project.id} className="project-section">
-
-            <div className="project-section-image">
-                <img src={project.image} alt="Project image" />
-            </div>
+            <LightBoxDisplay image={project.image}/>
             <h2 className="project-section-name">
                 {project.name}
             </h2>
