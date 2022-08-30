@@ -4,6 +4,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js'
+import * as THREE from 'three'
 
 export default class Resources extends EventEmitter
 {
@@ -51,6 +52,23 @@ export default class Resources extends EventEmitter
                 image.src = _resource.source
             }
         })
+
+        
+        // Glsl
+        const fileLoader = new THREE.FileLoader();
+        this.loaders.push({
+            extensions: ['glsl'],
+            action: (_resource) =>
+            {
+                fileLoader.load(_resource.source, (_data ) => 
+                    {
+                        this.fileLoadEnd(_resource, _data)
+                    }
+                )
+                
+            }
+        })
+
 
         // Draco
         const dracoLoader = new DRACOLoader()
