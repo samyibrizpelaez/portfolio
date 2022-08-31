@@ -60,6 +60,7 @@ export function App() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/contact" element={<ContactPage />} />
+                <Route path="/scene" element={<NotFoundPage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
 

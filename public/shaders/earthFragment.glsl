@@ -1,6 +1,7 @@
 uniform sampler2D dayTexture;
+
+    // Recover uniform textures to combine
     uniform sampler2D nightTexture;
-    
     uniform vec3 sunDirection;
     
     varying vec2 vUv;
@@ -10,8 +11,8 @@ uniform sampler2D dayTexture;
     vec3 dayColor = texture2D( dayTexture, vUv ).rgb;
     vec3 nightColor = texture2D( nightTexture, vUv ).rgb;
     
-        float intensity = 1.5 - dot(vNormal, vec3(0.0,0.0,1.0));
-        vec3 atmosphere = vec3(0.15,0.3,0.5) * pow(intensity, 1.5);
+    float intensity = 1.5 - dot(vNormal, vec3(0.0,0.0,1.0));
+    vec3 atmosphere = vec3(0.15,0.3,0.5) * pow(intensity, 1.5);
     
     // compute cosine sun to normal so -1 is away from sun and +1 is toward sun.
     float cosineAngleSunToNormal = dot(normalize(vNormal), sunDirection);
@@ -24,6 +25,10 @@ uniform sampler2D dayTexture;
     
     // Select day or night texture based on mix.
     vec3 color = mix( nightColor, dayColor, mixAmount );
+
+    vec3 earthblue =  vec3(0.156,0.4603,0.6943);
     
-    gl_FragColor = vec4( color, 1.0 );
+    // Blue shade
+
+    gl_FragColor = vec4( earthblue * 0.25 + color, 1.0 );
 }
