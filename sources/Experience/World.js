@@ -4,7 +4,9 @@ import { Float32BufferAttribute, Quaternion } from 'three'
 import Experience from './Experience.js'
 
 export default class World {
+
     constructor(_options) {
+
         this.experience = new Experience()
         this.config = this.experience.config
         this.scene = this.experience.scene
@@ -17,6 +19,7 @@ export default class World {
                 this.setStars()
             }
         })
+
     }
 
     setEarthNightAndDay() {
@@ -57,12 +60,10 @@ export default class World {
 
         });
 
-        this.earthAtmosphereGeometry        = new THREE.SphereGeometry(1.35, 64, 64)
+        this.earthAtmosphereGeometry        = new THREE.SphereGeometry(1.25, 64, 64)
         this.earthAtmosphereMesh            = new THREE.Mesh(this.earthAtmosphereGeometry, this.earthAtmosphereMaterial);
         this.earthAtmosphereMesh.name       = "AtmosMesh"
-        this.earthAtmosphereMesh.position.x -= 0.15
-        this.earthAtmosphereMesh.position.y += 0.05 //ok
-        this.earthAtmosphereMesh.position.z -= 0.15
+  
 
         this.earthMesh.add(this.earthAtmosphereMesh)
 
@@ -80,12 +81,14 @@ export default class World {
         this.cloudsGeometry.Name    = 'clouds';
         this.earthMesh.add(this.cloudsGeometry);
 
-        this.earthMesh.Name =        'earth';
+        this.earthMesh.Name         = 'earth';
         this.scene.add( this.earthMesh );
+
     }
 
     //Deprecated
     setEarth() {
+
         this.resources.items.earthDayTexture.encoding       = THREE.sRGBEncoding;
         this.resources.items.earthNightTexture.encoding     = THREE.sRGBEncoding;
         this.resources.items.earthNormalTexture.encoding    = THREE.sRGBEncoding;
@@ -119,15 +122,16 @@ export default class World {
         this.cloudsGeometry.Name = 'clouds';
         this.earthMesh.add(this.cloudsGeometry);
 
-        this.earthMesh.rotation.y = -Math.PI * 0.3;
         this.earthMesh.position.y = Math.PI / 3;
         this.earthMesh.position.x = -Math.PI / 3;
         this.earthMesh.position.z = -Math.PI / 1.5;
         this.earthMesh.Name = 'earth';
         this.scene.add(this.earthMesh);
+
     }
 
     setStars() {
+
         this.starsGeometry = new THREE.BufferGeometry();
         this.starsMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.01 });
 
@@ -144,10 +148,10 @@ export default class World {
         this.starsGeometry.setAttribute('position', new Float32BufferAttribute(vertices, 3));
         this.stars = new THREE.Points(this.starsGeometry, this.starsMaterial);
         this.scene.add(this.stars);
+
     }
 
     setLight() {
-
 
         // SUN
         this.light                      = new THREE.DirectionalLight(0xffffff, 4);
@@ -160,17 +164,21 @@ export default class World {
     }
 
     resize() {
+
     }
 
     update() {
 
         if (this.earthMesh)
         {
-            this.earthMesh.rotation.y               += Math.PI * 0.00007;
-            this.cloudsGeometry.rotation.y   += Math.PI * 0.00005;
+
+            this.earthMesh.rotation.y       += Math.PI * 0.0001;
+            this.cloudsGeometry.rotation.y  += Math.PI * 0.00005;
+            
         };
     }
 
     destroy() {
+
     }
 }

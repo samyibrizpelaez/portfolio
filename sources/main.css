@@ -396,8 +396,9 @@ footer{
     }
 
     .project-section{
+        font-size: .7em;
         margin-top: 3em;
-        margin-bottom :0em;
+        margin-bottom :3em;
     }
     
     .project-section-image>img {
@@ -496,8 +497,8 @@ footer{
     }
 
     .about-section{
-        margin-top: 1em;
-        font-size: .8em;
+        margin-top: 3em;
+        font-size: .6em;
     }
 
     .captchaSpan{

@@ -7,13 +7,13 @@ export default class Camera
     constructor(_options)
     {
         // Options
-        this.experience = new Experience()
-        this.config = this.experience.config
-        this.debug = this.experience.debug
-        this.time = this.experience.time
-        this.sizes = this.experience.sizes
-        this.targetElement = this.experience.targetElement
-        this.scene = this.experience.scene
+        this.experience     = new Experience()
+        this.config         = this.experience.config
+        this.debug          = this.experience.debug
+        this.time           = this.experience.time
+        this.sizes          = this.experience.sizes
+        this.targetElement  = this.experience.targetElement
+        this.scene          = this.experience.scene
 
         // Set up
         this.mode = 'debug' // defaultCamera \ debugCamera
@@ -34,6 +34,7 @@ export default class Camera
 
     setModes()
     {
+        
         this.modes = {}
 
         // Default
@@ -49,12 +50,13 @@ export default class Camera
         
         this.modes.debug.orbitControls = new OrbitControls(this.modes.debug.instance, this.targetElement)
         //this.modes.debug.orbitControls.enabled = this.modes.debug.active
-        this.modes.debug.orbitControls.enabled = false
-        this.modes.debug.orbitControls.screenSpacePanning = true
-        this.modes.debug.orbitControls.enableKeys = true
-        this.modes.debug.orbitControls.zoomSpeed = 0.25
-        this.modes.debug.orbitControls.enableDamping = true
+        this.modes.debug.orbitControls.enabled              = true
+        this.modes.debug.orbitControls.screenSpacePanning   = true
+        this.modes.debug.orbitControls.enableKeys           = true
+        this.modes.debug.orbitControls.zoomSpeed            = 0.25
+        this.modes.debug.orbitControls.enableDamping        = true
         this.modes.debug.orbitControls.update()
+
     }
 
 
