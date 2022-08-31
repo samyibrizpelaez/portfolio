@@ -204,6 +204,7 @@ h1 {
 
 .about-section {
     margin-top: 2em;
+    font-size: .7em;
 }
 
 .about-section > h2 {
@@ -356,6 +357,7 @@ footer{
     }
 
     .project-section{
+        
         margin-top: 2em;
     }
 
