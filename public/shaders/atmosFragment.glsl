@@ -1,9 +1,12 @@
+
+uniform vec3 customCameraPosition;
 varying vec3 vNormal;
+
             
 void main( void ) 
 {
 
-    float intensity = pow(0.5 - dot(vNormal, vec3(0.0,0.0,1.0)),  18.0);
+    float intensity = pow(0.1- dot(vNormal, customCameraPosition), 2.5);
 
     float r = 1.0/256.0*0.0;
     float g = 1.0/256.0*44.0;

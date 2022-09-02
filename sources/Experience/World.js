@@ -1,6 +1,6 @@
 
 import * as THREE from 'three'
-import { Float32BufferAttribute, Quaternion } from 'three'
+import { Float32BufferAttribute} from 'three'
 import Experience from './Experience.js'
 
 export default class World {
@@ -31,7 +31,8 @@ export default class World {
 
             sunDirection:   { value: new THREE.Vector3(0, 0.65, -1) },
             dayTexture:     { value: this.resources.items.earthDayTexture },
-            nightTexture:   { value: this.resources.items.earthNightTexture }
+            nightTexture:   { value: this.resources.items.earthNightTexture },
+
 
         };
 
@@ -46,12 +47,23 @@ export default class World {
         this.earthGeometry                  = new THREE.SphereGeometry(1, 64, 64)
         this.earthMesh                      = new THREE.Mesh(this.earthGeometry,  this.earthShaderMaterial)
         this.earthMesh.name                 = "EarthMesh"
-        this.earthMesh.position.y = Math.PI / 3;
         this.earthMesh.position.x = -Math.PI / 3;
+        this.earthMesh.position.y = Math.PI / 3;
         this.earthMesh.position.z = -Math.PI / 1.5;
+
+        const atmosUniforms = {
+            customCameraPosition: { value: new THREE.Vector3( 
+                -Math.PI    + Math.PI / 1.5, 
+                0           , 
+                +4          + Math.PI / 1.5
+                )
+            },
+        }
+        console.log(atmosUniforms)
 
         this.earthAtmosphereMaterial        = new THREE.ShaderMaterial({
 
+            uniforms:       atmosUniforms,
             vertexShader:   this.resources.items.earthVertex.source.data,
             fragmentShader: this.resources.items.atmosFragment.source.data,
             blending:       THREE.AdditiveBlending,
@@ -60,7 +72,7 @@ export default class World {
 
         });
 
-        this.earthAtmosphereGeometry        = new THREE.SphereGeometry(1.25, 64, 64)
+        this.earthAtmosphereGeometry        = new THREE.SphereGeometry(1.11, 64, 64)
         this.earthAtmosphereMesh            = new THREE.Mesh(this.earthAtmosphereGeometry, this.earthAtmosphereMaterial);
         this.earthAtmosphereMesh.name       = "AtmosMesh"
   
