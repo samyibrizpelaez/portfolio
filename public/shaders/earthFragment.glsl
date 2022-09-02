@@ -25,7 +25,13 @@ void main( void )
     // Select day or night texture based on mix.
     vec3 color = mix( nightColor, dayColor, mixAmount );
 
-    vec3 earthblue =  vec3(0.156,0.4603,0.6943);
+
+    float r = 1.0/256.0*0.0;
+    float g = 1.0/256.0*44.0;
+    float b = 1.0/256.0*83.0;
+    
+    vec3 earthblue = vec3(r,g,b);
+
 
     // Blue shade
 
