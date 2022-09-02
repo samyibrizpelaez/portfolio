@@ -164,7 +164,7 @@ export function HomePage()
               I am Samy
             </p>
             <p className="landing-content ld-2">
-              A Full-Stack developer
+              A Full&nbsp;Stack developer
             </p>
             <p className="landing-content ld-3">
               I build Apps for

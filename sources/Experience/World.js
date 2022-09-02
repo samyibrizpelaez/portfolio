@@ -136,7 +136,7 @@ export default class World {
         this.starsMaterial = new THREE.PointsMaterial({ color: 0xffffff, size: 0.01 });
 
         const vertices = []
-        for (let i = 0; i < 1000; i++) {
+        for (let i = 0; i < 9000; i++) {
 
             vertices.push(
                 (Math.random() - 0.5) * 20,
