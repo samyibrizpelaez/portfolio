@@ -145,6 +145,10 @@ h1 {
     
 }
 
+.nav-collection a{
+    cursor: pointer;
+}
+
 .nav-icon {
     filter: hue-rotate(180deg);
 }
