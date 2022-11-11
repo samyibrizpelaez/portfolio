@@ -5,6 +5,7 @@ import { HomePage } from './views/Home'
 import { AboutPage } from './views/About'
 import { ContactPage } from './views/Contact'
 import { ProjectsPage } from './views/Projects'
+import { ScenePage } from './views/Scene'
 
 const NotFoundPage = () => <h1 id="page-title">Not Found</h1>
 
@@ -60,7 +61,7 @@ export function App() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/contact" element={<ContactPage />} />
-                <Route path="/scene" element={<NotFoundPage />} />
+                <Route path="/scene" element={<ScenePage />} />
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
 

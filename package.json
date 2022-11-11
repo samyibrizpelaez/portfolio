@@ -22,6 +22,7 @@
     "react-google-recaptcha": "^2.1.0",
     "react-icon": "^1.0.0",
     "react-icons": "^4.4.0",
+    "react-papaparse": "^4.1.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
     "stats.js": "^0.17.0",

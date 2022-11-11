@@ -1,7 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { FaTwitter, FaLinkedin } from "react-icons/fa";
 import emailjs from 'emailjs-com'
-import { init } from 'emailjs-com';
 import ReCAPTCHA from 'react-google-recaptcha';
 
 
