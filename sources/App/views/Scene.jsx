@@ -16,7 +16,6 @@ export function ScenePage() {
     const slider            = new Slider("YearSlider", {min:1990, max:2023, step:1})
     const experience        = useRef(null)
     const unDataAdapter     = new UNDataAdapter()
-    console.log(unDataAdapter.parsedData)
 
 
 

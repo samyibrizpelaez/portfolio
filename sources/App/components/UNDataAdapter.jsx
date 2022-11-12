@@ -1,33 +1,59 @@
 import React from "react"
-
-import {useState, useEffect} from 'react'
 import Papa from 'papaparse'
 
 import CSVData from '../data/UNdataCSV.txt' 
+import UNdata from '../data/UNdata.json' 
+import CSVToArray from "./CSVtoArray"
 
 export default class UNDataAdapter
 {
+    constructor(props) 
+    {
+        console.log(UNdata)
+        //Extract string from file
 
-    // constructor(props) 
-    // {
-    //     this.dataIsLoaded = false
+        //Parse CSV to Array
+        // this.parsedData = Papa.parse(
+        //     CSVData, 
+        //     {
+        //         header: true,
+        //         download: true,
+        //         complete: (results) => {
+        //             console.log(results.data)
+        //           },
+        //     });
 
-    //     const [parsedCsvData, setParsedCsvData] = useState([]);
-    //     this.parsedData = parsedCsvData
-
-    //     if(!this.dataIsLoaded)
-    //     {
-    //         Papa.parse(CSVData, {
-    //             header: true,
-    //             download: true,
-    //             complete: results => {
-    //                 setParsedCsvData(results.data)
-    //                 console.log(parsedCsvData)
-    //                 this.dataIsLoaded = true
-    //             },
-    //             });
-    //     }
        
+        // console.log(this.parsedData)
+
+        // const [parsedCsvData, setParsedCsvData] = useState([]);
+
+        // useEffect(() => {
+        //     async function getData() {
+        //         const response = await fetch("/data/nodes.csv");
+        //         const reader = response.body.getReader();
+        //         const result = await reader.read(); // raw array
+        //         const decoder = new TextDecoder("utf-8");
+        //         const csv = decoder.decode(result.value); // the csv text
+        //         const results = Papa.parse(csv, { header: true }); // object with { data, errors, meta }
+        //         const rows = results.data; // array of objects
+        //         setParsedCsvData(rows);
+        //     }
+        //     getData();
+        // }, []);
+    }
+
+    parsedata(file){
+
+    
+        return 
+        
+    }
+
+    // setData(data){
+
+    //     this.state.data = data
+
     // }
 
 
