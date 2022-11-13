@@ -29,17 +29,13 @@ export default class EarthDataHandler
     }
 
     // Mainly resets previous setting and center the earth
-    setEarthPosition() {
+    async setEarthPosition() {
 
         //Reset earth position for presentation
-        window.earth.position.x = 0
-        window.earth.position.y = 0
-        window.earth.position.z = 0
+        await window.earth.position.set(0,0,0)
     
         //Reset earth rotation for presentation
-        window.earth.rotation.x = 0
-        window.earth.rotation.y = 0
-        window.earth.rotation.z = 0
+        await window.earth.rotation.set(0,0,0)
     }
 
     // Reactivate camera controls
