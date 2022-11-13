@@ -48,12 +48,10 @@ export function ScenePage() {
     //     "Both Sexes"
     // )
 
-    console.log("Filter Event Resulting Data : ", unDataAdapter.ResultingData)
+    const vizData = unDataAdapter.ResultingData
+    console.log("Filter Event Resulting Data : ", vizData)
 
-    const experience        = useRef(null)
-
-   
-    const canvas = EarthHandler()
+    EarthHandler(vizData)
 
     return (
 
