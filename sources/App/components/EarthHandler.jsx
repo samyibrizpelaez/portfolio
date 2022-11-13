@@ -10,15 +10,18 @@ export default class EarthDataHandler
 {
     constructor(data)
     {
+        // Raycasting helping storages
         this.mouse = new THREE.Vector2()
         this.raycastBindValue = null
         
+        // Main Procedure
         this.setEarthPosition()
         this.enableCameraControls()
         this.addDataLayer(data)
         this.setRaycaster()
     }
 
+    // Mainly resets previous setting and center the earth
     setEarthPosition() {
 
         //Reset earth position for presentation
