@@ -1,11 +1,18 @@
 import * as THREE from 'three'
 
-// @Name        : EarthHandler
-// @Description : Scene experiments and external obj handling
-// @Output      : React Component
 
+// Things you should never do
+// I defined globals to interact with data bypassing
+// the strict division between the react app and the threejs experience.
+// Furthemore, a question of limited time
 window.meshes = []
 window.hoveredData = []
+
+
+// @Name        : EarthDataHandler
+// @Description : Get the 3D experience co-project and edits it to make it fit
+//                to the dataviz demo
+// @Output      : React Component
 export default class EarthDataHandler
 {
     constructor(data)
@@ -91,15 +98,22 @@ export default class EarthDataHandler
         window.earth.add(dataSphereMesh)                               
     }
 
+    // Normalize a rangre with a set of arbitrary min and max.
+    // The dataset treated required a min-max feature scaling,
+    // due to the huge differences in values. 
+    // https://en.wikipedia.org/wiki/Feature_scaling#Rescaling_(min-max_normalization)
     normalize(val, max, min) 
     { 
-        let maxDataValue    = 50000000
+        let maxDataValue    = 50000000 //TODO : Extract the max and min directly from the dataset
         let minDataValue    = 100
         let minRange        = min
         let maxRange        = max
         return   minRange + (val - minDataValue) * (maxRange - minRange) / (maxDataValue - minDataValue) 
     }
 
+    // Function not implemented
+    // TODO : Clear the scene of superfluos data
+    // Clear the scene when the filters change
     disposeDataMeshes(){
 
         // If there are instances meshes, remove them from the scene
@@ -118,16 +132,10 @@ export default class EarthDataHandler
     }
     
 
+    // Sets the mouse event and calls the raycaster
     setRaycaster() {
 
         let raycaster = window.raycaster = new THREE.Raycaster()
-    
-        const rayOrigin = new THREE.Vector3(- 3, 0, 0)
-        const rayDirection = new THREE.Vector3(10, 0, 0)
-        rayDirection.normalize()
-    
-        raycaster.set(rayOrigin, rayDirection)
-    
         
         window.addEventListener('mousemove', (event) =>
         {
@@ -139,6 +147,9 @@ export default class EarthDataHandler
     
     }
 
+    // Raycaster function : continuously stores the intersected object
+    // The intersected object matches the ones previously saved 
+    // avoiding intersection with any others in the scene
     pickPiece() {
 
         raycaster.setFromCamera(this.mouse, window.camera);
@@ -147,9 +158,7 @@ export default class EarthDataHandler
     
         for (let i = 0; i < intersects.length; i++) 
         {
-            
             this.raycastBindValue = intersects[i].object.userData
-            //console.log(this.raycastBindValue)
         }
       }
 }

@@ -8,10 +8,13 @@ import UNDataAdapter from '../components/UNDataAdapter'
 
 // @Name        : ScenePage
 // @Description : Page for scene experiments
-// @Output      : React Component
+// @Output      : Component
 export function ScenePage() {
 
+    // Data Loader & ETL
     const unDataAdapter     = new UNDataAdapter()
+
+    // Filters components
     const religionSelect    = new Select("ReligionSelect",  unDataAdapter.Religions)
     const sexSelect         = new Select("SexSelect",       unDataAdapter.Sexes)
     const slider            = new Slider("YearSlider", {
@@ -22,30 +25,24 @@ export function ScenePage() {
                                                     )
 
 
-
-    // console.log(
-    //     "Filter Initial Values : ", 
-    //     slider.value,
-    //     religionSelect.value,
-    //     sexSelect.value 
-    //     )
-
+    // Filters data before serving                                                    
     unDataAdapter.setFilter(
         slider.value,
         religionSelect.value,
         sexSelect.value
     )
 
+    // Recover data
     const vizData = unDataAdapter.ResultingData
-    //console.log("Filter Event Resulting Data : ", vizData)
     
+    // Enable raycasting & data re-render via react state
     const [raycastedValue, setRaycasted]    = useState(null);
     const earthDataViz                      = new EarthDataHandler(vizData)
 
+    // Mouse event for raycasting data update
     window.addEventListener('mousemove', (event) =>
     {
         setRaycasted(earthDataViz.raycastBindValue)
-        //console.log("RAYCASTED :", raycastedValue)
 
     })
 
@@ -78,13 +75,16 @@ export function ScenePage() {
 
 }
 
+
+// @Name        : RayCastedData
+// @Description : Component for Raycasted Obj data.
+//                Display data if available.
+// @Output      : Component
 export default function RayCastedData(props)
 {
-    //console.log("RAYCASTED")
 
     if(props.data != null)
     {
-        //console.log("RAYCASTED")
         return (
             <div className='raycasted'>
                 <p>{"Country     : " + props.data["Country or Area"]}</p>

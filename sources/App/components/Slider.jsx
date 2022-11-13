@@ -1,24 +1,21 @@
-
 import React from 'react';
 import {useState} from 'react';
 
-
+// @Name        : Slider
+// @Description : Generate and return a input:type:range component
+// @Output      : Component
 export default class Slider
 {
 
-    constructor(name, options, /*parentContext*/)
+    constructor(name, options)
     {
         this.name = name
         this.props = options
         this.value = options[0]
         this.component = this.setComponent()
-        // this.parentContext = parentContext
     }
 
-    // notifyValueChange(){
-    //     this.parentContext.valueUpdated()
-    // }
-
+    // Generate and build the component with a range of years
     setComponent()
     {
         const [selectedValue, setValue] = useState(this.props.min)
@@ -43,7 +40,6 @@ export default class Slider
                     step    ={this.props.step} 
                     onInput ={ (e) => { 
                                         setValue(e.target.value) 
-                                        //this.notifyValueChange()
                                     }
                                 }/>
 
@@ -52,6 +48,7 @@ export default class Slider
         )
     }
 
+    // Return component
     renderComponent()
     {
         return this.component

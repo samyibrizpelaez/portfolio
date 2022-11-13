@@ -1,8 +1,6 @@
 import UNdata from '../data/UNdata.json' 
 import CountryCoord from '../data/CountryCoords.json' 
 
-
-
 // DATASHAPE SAMPLE (https://data.un.org/Data.aspx?d=POP&f=tableCode%3a28):
 // "Country or Area": "Albania",
 // "Year": 2011,
@@ -30,6 +28,12 @@ import CountryCoord from '../data/CountryCoords.json'
 // "latitude" : 41,
 // "longitude" : 20
 
+
+// @Name        : UNDataAdapter
+// @Description : Get the UN data about religion from a JSON file,
+//                gets the diferent filters (unique values),
+//                parse the data and aggregates it with global coordinates
+// @Output      : React Component
 export default class UNDataAdapter
 {
     constructor() 
@@ -64,6 +68,7 @@ export default class UNDataAdapter
 
     }
 
+    // Update data filter and execute data procedure (ETL)
     setFilter(Year, Religion, Sex)
     {
         this.Filter     = {
@@ -77,55 +82,49 @@ export default class UNDataAdapter
             "Source Year"       : [],
             "Value"             : [], 
         }
-        ////console.log("SetFilter - Selected Filter : ", this.Filter)
 
         this.ResultingData = this.getResultingData()
-
-        ////console.log("SetFilter - Resulting Data : ", this.ResultingData )
 
         return this.ResultingData
     }
 
+    // Query the data and add agreggated polar coordinates
     getResultingData()
     {
-        ////console.log("Resulting Data - RAW UN Data : ", this.UNdata)
-
-        ////console.log("Resulting Data - filter :", this.Filter)
-
         let dataQueriedFromUNData = this.selectData(this.UNdata, this.Filter)
-        ////console.log("Resulting Data - Queried UN Data : ", dataQueriedFromUNData)
 
         dataQueriedFromUNData = this.addCountriesCoordinates(dataQueriedFromUNData)
-        ////console.log("Resulting Data - Queried UN Data with aggregated coordinates: ", dataQueriedFromUNData)
 
         return dataQueriedFromUNData
     }
 
+    // Get unique values from the data in order to implement filters
     getUniques(data, fieldToFilter)
     {
         const unique = [... new Set(data.map(item => item[fieldToFilter]))]
 
         unique.sort()
 
-        ////console.log("GetUniques - Uniques for " + fieldToFilter + " :", unique)
-
         return unique
     }
 
-
+    // Build a dynamic filter and query the data
     selectData(data, filter)
     {
         let query       = this.buildFilter(filter)
-        ////console.log("SelectData - Built Filter : ", query)
 
         let queriedData = this.filterData(data, query)
-        ////console.log("SelectData - Queried Data : ", queriedData)
-
 
         return queriedData
 
     }
 
+    // Build a dynamic filter matching the obj passed as
+    // this.Filter     = {
+    //     "Country or Area"   : [],
+    //     "Year"              : [parseInt(Year)],
+    //     ...
+    // }
     buildFilter(filter){
         let query = {};
         for (let keys in filter) {
@@ -137,10 +136,8 @@ export default class UNDataAdapter
         return query;
     }
 
+    // Handle the data filtering and return the data matching the query filter
     filterData(data, query){
-
-        ////console.log("FilterData - Original Data : ", data)
-        ////console.log("FilterData - Incoming Query : ", query)
 
         const filteredData = data.filter( (item) => {
             for (let key in query) {
@@ -151,13 +148,11 @@ export default class UNDataAdapter
             return true;
         });
 
-        ////console.log("FilterData - Filtered Data: ", filteredData)
-
         return filteredData;
         
     }
 
-    //Agregate Country code, latitude and logitude to the previously queried data
+    //Agregate Country code, polar latitude and logitude to the previously queried data
     addCountriesCoordinates(data){
 
         let aggregatedData = data
@@ -167,11 +162,9 @@ export default class UNDataAdapter
                 this.filter = {
                     "country"   :  [element['Country or Area']],
                 }
-                //console.log(this.filter)
     
                 let result = this.selectData(this.StoredCountryCoordinates, this.filter)[0]
     
-                //console.log(result)
                 element['alpha2']    = result.alpha2
                 element['alpha3']    = result.alpha3
                 element['latitude']  = result.latitude
@@ -179,7 +172,9 @@ export default class UNDataAdapter
             }
             catch
             {
-                //console.log("Missing coordinates for : ", element['Country or Area'])
+                // Skip the row
+                // **This block can be used to catch unmatching locations
+                // console.log("Missing coordinates for : ", element['Country or Area'])
             }
             
         });
