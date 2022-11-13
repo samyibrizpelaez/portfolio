@@ -96,6 +96,8 @@ export default class World {
         this.earthMesh.Name         = 'earth';
         this.scene.add( this.earthMesh );
 
+        window.earth = this.earthMesh;
+
     }
 
     //Deprecated

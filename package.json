@@ -35,5 +35,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.12"
-  }
+  },
+  "proxy" : "https://nominatim.openstreetmap.org/"
 }

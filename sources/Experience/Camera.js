@@ -57,6 +57,8 @@ export default class Camera
         this.modes.debug.orbitControls.enableDamping        = true
         this.modes.debug.orbitControls.update()
 
+        window.cameraControls = this.modes.debug.orbitControls
+
     }
 
 

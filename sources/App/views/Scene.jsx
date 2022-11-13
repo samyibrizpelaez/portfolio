@@ -11,13 +11,49 @@ import UNDataAdapter from '../components/UNDataAdapter'
 // @Output      : React Component
 export function ScenePage() {
 
-    const religionSelect    = new Select("ReligionSelect", ["Christian", "Muslim", "Papaya"])
-    const sexSelect         = new Select("SexSelect", ["Both", "Male", "Female"])
-    const slider            = new Slider("YearSlider", {min:1990, max:2023, step:1})
-    const experience        = useRef(null)
     const unDataAdapter     = new UNDataAdapter()
 
 
+
+    const religionSelect    = new Select("ReligionSelect",  unDataAdapter.Religions)
+    const sexSelect         = new Select("SexSelect",       unDataAdapter.Sexes)
+    const slider            = new Slider("YearSlider", {
+                                                        min:unDataAdapter.TimeAxis[0], 
+                                                        max:unDataAdapter.TimeAxis[unDataAdapter.TimeAxis.length - 1], 
+                                                        step:1
+                                                        }
+                                                    )
+
+
+
+    console.log(
+        "Filter Initial Values : ", 
+        slider.value,
+        religionSelect.value,
+        sexSelect.value 
+        )
+
+    unDataAdapter.setFilter(
+        slider.value,
+        religionSelect.value,
+        sexSelect.value
+    )
+
+
+
+    
+    // unDataAdapter.setFilter(
+    //     1995,
+    //     "African Methodist Episcopal Church",
+    //     "Both Sexes"
+    // )
+
+    console.log("Filter Event Resulting Data : ", unDataAdapter.ResultingData)
+
+    const experience        = useRef(null)
+
+   
+    const canvas = EarthHandler()
 
     return (
 
@@ -47,4 +83,6 @@ export function ScenePage() {
     )
 
 }
+
+
 

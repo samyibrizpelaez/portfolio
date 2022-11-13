@@ -6,14 +6,18 @@ import {useState} from 'react';
 export default class Slider
 {
 
-    constructor(name, options)
+    constructor(name, options, /*parentContext*/)
     {
         this.name = name
         this.props = options
-        this.value = 0
+        this.value = options[0]
         this.component = this.setComponent()
+        // this.parentContext = parentContext
     }
 
+    // notifyValueChange(){
+    //     this.parentContext.valueUpdated()
+    // }
 
     setComponent()
     {
@@ -37,7 +41,11 @@ export default class Slider
                     min     ={this.props.min} 
                     max     ={this.props.max}  
                     step    ={this.props.step} 
-                    onInput ={ (e) => { setValue(e.target.value) }}/>
+                    onInput ={ (e) => { 
+                                        setValue(e.target.value) 
+                                        //this.notifyValueChange()
+                                    }
+                                }/>
 
             </div>
 

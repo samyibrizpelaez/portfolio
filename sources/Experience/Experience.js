@@ -18,6 +18,7 @@ export default class Experience
 
     constructor(_options = {})
     {
+
         if(Experience.instance)
         {
             return Experience.instance

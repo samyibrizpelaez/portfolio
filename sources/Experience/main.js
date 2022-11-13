@@ -1,7 +1,7 @@
 
 import Experience from './Experience'
 
-const experience = new Experience({
+window.experience = new Experience({
     targetElement: document.querySelector('#experience')
 })
 
