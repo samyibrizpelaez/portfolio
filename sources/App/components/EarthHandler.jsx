@@ -32,19 +32,19 @@ export default class EarthDataHandler
         window.earth.rotation.z = 0
     }
 
+    // Reactivate camera controls
     enableCameraControls() {
 
         window.cameraControls.enabled = true
     }
 
+    // Pass the data and create a set of spheres,
+    // all at the same altitude of the globe
     addDataLayer(data){
 
-
         //disposeDataMeshes()
-    
-        ////console.log(data)
+
         if(data != null){
-            ////console.log(data)
             data.forEach(element => {
                 this.addDataMeshesToTheScene(element)
             });
@@ -52,11 +52,14 @@ export default class EarthDataHandler
     
     }
 
+    // Adds a sphere to the scene for each node of data
+    // Each Sphere is located in the realworld coordinates
+    // Each Sphere has a normalized magnitude for simple comparison
+    // Each Sphere has binded data in order of returning it via raycast
     addDataMeshesToTheScene(data) {
 
         // Set main object visualisation parameters
         let magnitude = this.normalize(data.Value, 10, 1)  * 0.02
-        // let magnitude =  data.Value/1000000 * 0.01
         let lat = data.latitude * (Math.PI / 180)
         let lon = -data.longitude * (Math.PI / 180)
     
