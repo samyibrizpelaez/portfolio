@@ -327,6 +327,24 @@ footer{
     margin: 10px;
 }
 
+.scene-section .raycasted{
+    font-size: 20px;
+}
+
+.scene-section select{
+    width: 60%;
+    height: 30px;
+    margin-top:25px;
+    margin-right:10px;
+    background-color: white;
+    border-radius: 3px;
+    float: left;
+}
+
+.sliderContainer{
+    padding-top:150px;
+    width: 60%;
+}
 
 
 @media (max-width: 1700px){

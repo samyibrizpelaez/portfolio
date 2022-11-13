@@ -1,9 +1,9 @@
 import React from 'react'
-import {useState, useRef} from 'react'
+import {useState, forceUpdate, useRef} from 'react'
 
-import  Slider  from '../components/Slider'
-import  Select from '../components/Select'
-import { EarthHandler} from '../components/EarthHandler'
+import Slider  from '../components/Slider'
+import Select from '../components/Select'
+import EarthDataHandler from '../components/EarthHandler'
 import UNDataAdapter from '../components/UNDataAdapter'
 
 // @Name        : ScenePage
@@ -12,9 +12,6 @@ import UNDataAdapter from '../components/UNDataAdapter'
 export function ScenePage() {
 
     const unDataAdapter     = new UNDataAdapter()
-
-
-
     const religionSelect    = new Select("ReligionSelect",  unDataAdapter.Religions)
     const sexSelect         = new Select("SexSelect",       unDataAdapter.Sexes)
     const slider            = new Slider("YearSlider", {
@@ -26,12 +23,12 @@ export function ScenePage() {
 
 
 
-    console.log(
-        "Filter Initial Values : ", 
-        slider.value,
-        religionSelect.value,
-        sexSelect.value 
-        )
+    // console.log(
+    //     "Filter Initial Values : ", 
+    //     slider.value,
+    //     religionSelect.value,
+    //     sexSelect.value 
+    //     )
 
     unDataAdapter.setFilter(
         slider.value,
@@ -39,23 +36,22 @@ export function ScenePage() {
         sexSelect.value
     )
 
-
-
-    
-    // unDataAdapter.setFilter(
-    //     1995,
-    //     "African Methodist Episcopal Church",
-    //     "Both Sexes"
-    // )
-
     const vizData = unDataAdapter.ResultingData
-    console.log("Filter Event Resulting Data : ", vizData)
+    //console.log("Filter Event Resulting Data : ", vizData)
+    
+    const [raycastedValue, setRaycasted]    = useState(null);
+    const earthDataViz                      = new EarthDataHandler(vizData)
 
-    EarthHandler(vizData)
+    window.addEventListener('mousemove', (event) =>
+    {
+        setRaycasted(earthDataViz.raycastBindValue)
+        //console.log("RAYCASTED :", raycastedValue)
+
+    })
 
     return (
 
-        <div>
+        <section className="scene-section">
 
             <h1 id="page-title">RTS</h1>
 
@@ -63,23 +59,49 @@ export function ScenePage() {
             
                 <h2>Religion in time and space</h2>
 
-                
-                {console.log(slider)}
-                {console.log(religionSelect)}
-                {console.log(sexSelect)}
                 {religionSelect.renderComponent()}
                 {sexSelect.renderComponent()}
                 {slider.renderComponent()}
 
-
+                <p> 
+                    {
+                        <RayCastedData data={raycastedValue}/>
+                    } 
+                </p>
 
 
             </div>
 
-        </div>
+        </section>
 
     )
 
+}
+
+export default function RayCastedData(props)
+{
+    //console.log("RAYCASTED")
+
+    if(props.data != null)
+    {
+        //console.log("RAYCASTED")
+        return (
+            <div className='raycasted'>
+                <p>{"Country     : " + props.data["Country or Area"]}</p>
+                <p>{"Country Code: " + props.data["alpha2"]}</p>
+                <p>{"Year        : " + props.data["Year"]}</p>
+                <p>{"Source Year : " + props.data["Source Year"]}</p>
+                <p>{"Area        : " + props.data["Area"]}</p>
+                <p>{"Sex         : " + props.data["Sex"]}</p>
+                <p>{"Religion    : " + props.data["Religion"]}</p>
+                <p>{"Reliability : " + props.data["Reliability"]}</p>
+                <p>{"Record Type : " + props.data["Record Type"]}</p>
+                <p>{"Population  : " + props.data["Value"]}</p>
+                
+            </div>
+        )
+        
+    }
 }
 
 

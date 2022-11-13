@@ -100,6 +100,7 @@ export default class Experience
         this.renderer = new Renderer({ rendererInstance: this.rendererInstance })
 
         this.targetElement.appendChild(this.renderer.instance.domElement)
+
     }
 
     setResources()

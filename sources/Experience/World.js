@@ -51,6 +51,19 @@ export default class World {
         this.earthMesh.position.y = Math.PI / 3;
         this.earthMesh.position.z = -Math.PI / 1.5;
 
+        this.cloudsGeometry = new THREE.SphereGeometry(1.005, 64,64)
+        this.cloudsmaterial = new THREE.MeshPhongMaterial(
+            {
+                map:            this.resources.items.earthCloudsTexture,
+                opacity:        1.0,
+                transparent:    true,
+                depthWrite:     true,
+                blending:       THREE.NormalBlending
+            });
+        this.cloudsGeometry         = new THREE.Mesh(this.cloudsGeometry, this.cloudsmaterial);
+        this.cloudsGeometry.Name    = 'clouds';
+        this.earthMesh.add(this.cloudsGeometry);
+
         const atmosUniforms = {
             customCameraPosition: { value: new THREE.Vector3( 
                 -Math.PI    + Math.PI / 1.5, 
@@ -80,23 +93,13 @@ export default class World {
         this.earthMesh.add(this.earthAtmosphereMesh)
 
 
-        this.cloudsGeometry = new THREE.SphereGeometry(1.005, 64,64)
-        this.cloudsmaterial = new THREE.MeshPhongMaterial(
-            {
-                map:            this.resources.items.earthCloudsTexture,
-                opacity:        1.0,
-                transparent:    true,
-                depthWrite:     true,
-                blending:       THREE.NormalBlending
-            });
-        this.cloudsGeometry         = new THREE.Mesh(this.cloudsGeometry, this.cloudsmaterial);
-        this.cloudsGeometry.Name    = 'clouds';
-        this.earthMesh.add(this.cloudsGeometry);
+       
 
         this.earthMesh.Name         = 'earth';
         this.scene.add( this.earthMesh );
 
         window.earth = this.earthMesh;
+        window.clouds = this.cloudsGeometry;
 
     }
 

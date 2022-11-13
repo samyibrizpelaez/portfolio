@@ -2,8 +2,8 @@ import UNdata from '../data/UNdata.json'
 import CountryCoord from '../data/CountryCoords.json' 
 
 
-// DATASHAPE SAMPLE (UNDATA):
 
+// DATASHAPE SAMPLE (https://data.un.org/Data.aspx?d=POP&f=tableCode%3a28):
 // "Country or Area": "Albania",
 // "Year": 2011,
 // "Area": "Total",
@@ -32,25 +32,34 @@ import CountryCoord from '../data/CountryCoords.json'
 
 export default class UNDataAdapter
 {
-    constructor(props) 
+    constructor() 
     {
+        // Get data sources (JSON)
         this.UNdata                     = UNdata
         this.StoredCountryCoordinates   = CountryCoord
+
+        // Get possible filters from the same data
         this.TimeAxis   = this.getUniques(this.UNdata, "Year")
         this.Religions  = this.getUniques(this.UNdata, "Religion")
         this.Sexes      = this.getUniques(this.UNdata, "Sex")
+
+        // Set default filter matching the first value of
+        // each possible filter
         this.Filter     = {
             "Country or Area"   : [],
             "Year"              : [this.TimeAxis[0]],
             "Area"              : [],
             "Sex"               : [this.Sexes[0]],
-            "Religion"          : [this.Religions[3]],
+            "Religion"          : [this.Religions[0]],
             "Record Type"       : [],
             "Reliability"       : [],
             "Source Year"       : [],
             "Value"             : [], 
         }
 
+        // Execute Data ETL :
+        // Filter, Sort and add agreggates 
+        // Stores the value for easier access
         this.ResultingData = this.getResultingData()
 
     }
@@ -68,26 +77,26 @@ export default class UNDataAdapter
             "Source Year"       : [],
             "Value"             : [], 
         }
-        //console.log("SetFilter - Selected Filter : ", this.Filter)
+        ////console.log("SetFilter - Selected Filter : ", this.Filter)
 
         this.ResultingData = this.getResultingData()
 
-        //console.log("SetFilter - Resulting Data : ", this.ResultingData )
+        ////console.log("SetFilter - Resulting Data : ", this.ResultingData )
 
         return this.ResultingData
     }
 
     getResultingData()
     {
-        //console.log("Resulting Data - RAW UN Data : ", this.UNdata)
+        ////console.log("Resulting Data - RAW UN Data : ", this.UNdata)
 
-        //console.log("Resulting Data - filter :", this.Filter)
+        ////console.log("Resulting Data - filter :", this.Filter)
 
         let dataQueriedFromUNData = this.selectData(this.UNdata, this.Filter)
-        //console.log("Resulting Data - Queried UN Data : ", dataQueriedFromUNData)
+        ////console.log("Resulting Data - Queried UN Data : ", dataQueriedFromUNData)
 
         dataQueriedFromUNData = this.addCountriesCoordinates(dataQueriedFromUNData)
-        //console.log("Resulting Data - Queried UN Data with aggregated coordinates: ", dataQueriedFromUNData)
+        ////console.log("Resulting Data - Queried UN Data with aggregated coordinates: ", dataQueriedFromUNData)
 
         return dataQueriedFromUNData
     }
@@ -98,7 +107,7 @@ export default class UNDataAdapter
 
         unique.sort()
 
-        //console.log("GetUniques - Uniques for " + fieldToFilter + " :", unique)
+        ////console.log("GetUniques - Uniques for " + fieldToFilter + " :", unique)
 
         return unique
     }
@@ -107,10 +116,10 @@ export default class UNDataAdapter
     selectData(data, filter)
     {
         let query       = this.buildFilter(filter)
-        //console.log("SelectData - Built Filter : ", query)
+        ////console.log("SelectData - Built Filter : ", query)
 
         let queriedData = this.filterData(data, query)
-        //console.log("SelectData - Queried Data : ", queriedData)
+        ////console.log("SelectData - Queried Data : ", queriedData)
 
 
         return queriedData
@@ -130,8 +139,8 @@ export default class UNDataAdapter
 
     filterData(data, query){
 
-        //console.log("FilterData - Original Data : ", data)
-        //console.log("FilterData - Incoming Query : ", query)
+        ////console.log("FilterData - Original Data : ", data)
+        ////console.log("FilterData - Incoming Query : ", query)
 
         const filteredData = data.filter( (item) => {
             for (let key in query) {
@@ -142,7 +151,7 @@ export default class UNDataAdapter
             return true;
         });
 
-        //console.log("FilterData - Filtered Data: ", filteredData)
+        ////console.log("FilterData - Filtered Data: ", filteredData)
 
         return filteredData;
         
@@ -154,15 +163,25 @@ export default class UNDataAdapter
         let aggregatedData = data
         aggregatedData.forEach(element => {
            
-            this.filter = {
-                "country"   :  element['Country or Area'],
+            try{
+                this.filter = {
+                    "country"   :  [element['Country or Area']],
+                }
+                //console.log(this.filter)
+    
+                let result = this.selectData(this.StoredCountryCoordinates, this.filter)[0]
+    
+                //console.log(result)
+                element['alpha2']    = result.alpha2
+                element['alpha3']    = result.alpha3
+                element['latitude']  = result.latitude
+                element['longitude'] = result.longitude
             }
-            let result = this.selectData(this.StoredCountryCoordinates, this.filter)[0]
-
-            element['alpha2']    = result.alpha2
-            element['alpha3']    = result.alpha3
-            element['latitude']  = result.latitude
-            element['longitude'] = result.longitude
+            catch
+            {
+                //console.log("Missing coordinates for : ", element['Country or Area'])
+            }
+            
         });
 
         return aggregatedData
@@ -186,9 +205,9 @@ export default class UNDataAdapter
     //     .then( 
     //         (jsonData) => 
     //         {
-    //             //console.log('OCD API Global Response :', jsonData);
-    //             //console.log('OCD API Query Response :', jsonData.results[0]);
-    //             //console.log('OCD API Location Geometric Coordinates :', jsonData.results[0].geometry );
+    //             ////console.log('OCD API Global Response :', jsonData);
+    //             ////console.log('OCD API Query Response :', jsonData.results[0]);
+    //             ////console.log('OCD API Location Geometric Coordinates :', jsonData.results[0].geometry );
     //         }
     //     )
 
