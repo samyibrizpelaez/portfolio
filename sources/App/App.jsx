@@ -52,6 +52,13 @@ export function App() {
                         </Link>
                     </li>
 
+                    <li className="nav-item">
+                        <Link to="scene">
+                            <span>Demo</span>
+                            <img src="assets/icons/wip.svg" alt="Demo" />
+                        </Link>
+                    </li>
+
                 </ul>
                 <footer>&copy; <em>2022</em> Samy Ibriz Pelaez</footer>
             </div>
